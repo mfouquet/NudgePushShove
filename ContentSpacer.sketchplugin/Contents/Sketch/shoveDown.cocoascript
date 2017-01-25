@@ -1,0 +1,26 @@
+@import 'utils/json.js';
+
+var shoveDown = function(context) {
+
+  // Get the current document to reload the inspector later
+  const document = MSDocument.currentDocument();
+
+  // Get the current selection so we can iterate them and move them
+  const selectedLayers = context.selection;
+
+  // Load the settings file so we know how much to Shove
+  const scriptPath = context.scriptPath;
+  const scriptFolder = [scriptPath stringByDeletingLastPathComponent];
+  const settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
+
+  // Iterate through the selected layers and move them
+  for (var i = 0; i < selectedLayers.count(); i++) {
+
+    // Grab the layer and shove it
+    var layer = selectedLayers[i];
+    layer.frame().setY(parseFloat(layer.frame().y()) + parseFloat(settingsFile.shove));
+
+    // Reload the inspector with new values
+    document.reloadInspector();
+  }
+}
