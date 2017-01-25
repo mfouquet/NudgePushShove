@@ -25,7 +25,7 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 ### Shove
 - Navigate to `Plugins` > `Nudge, Push, Shove.` > `Shove arrow key`.
 - Hit `alt` + `shift` + `arrow key` on your keyboard.
-- Default for this is 15px
+- Default for this is 15px.
 
 
 # Problems?
