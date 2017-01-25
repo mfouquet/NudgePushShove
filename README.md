@@ -12,7 +12,7 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 
 ## Usage
 
-#### Adjust Nudge Settings
+### Adjust Nudge Settings
 - Navigate to `Plugins` > `Nudge, Push, Shove.` > `Adjust Nudge Settings`.
 - Hit `ctrl` + `cmd` + `n` on your keyboard.
 
@@ -22,7 +22,7 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 ### Push
 - Use the `shift` + `arrow keys` like normal. Default for this is 10px.
 
-#### Shove
+### Shove
 - Navigate to `Plugins` > `Nudge, Push, Shove.` > `Shove arrow key`.
 - Hit `alt` + `shift` + `arrow key` on your keyboard.
 - Default for this is 15px
