@@ -1,5 +1,3 @@
-![](http://i.imgur.com/rxpHQYz.png)
-
 # Nudge, Push, Shove.
 
 Changing the nudge settings in Sketch used to require a trip to the terminal. _Used to_. Now you can change those settings easily with a plugin. In addition, there's new hotkeys to make huge nudges if you need to.
