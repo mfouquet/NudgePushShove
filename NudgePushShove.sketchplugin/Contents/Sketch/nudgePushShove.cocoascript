@@ -118,6 +118,7 @@ var onRun = function(context) {
     nibui.radio8.setState(NSOffState);
     nibui.textCustomNudge.setEnabled(true);
     nibui.stepperCustomNudge.setEnabled(true);
+    updateNudgeDistance("Small", nibui.stepperCustomNudge.stringValue());
     saveJsonToFile(context, "nudge", nibui.stepperCustomNudge.stringValue());
   });
 
@@ -165,6 +166,7 @@ var onRun = function(context) {
     nibui.radio32.setState(NSOffState);
     nibui.textCustomPush.setEnabled(true);
     nibui.stepperCustomPush.setEnabled(true);
+    updateNudgeDistance("Big", nibui.stepperCustomPush.stringValue());
     saveJsonToFile(context, "push", nibui.stepperCustomPush.stringValue());
   });
 
