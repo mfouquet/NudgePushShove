@@ -216,17 +216,17 @@
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8al-Yy-AC6">
                         <rect key="frame" x="367" y="298" width="19" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" increment="0.10000000000000001" minValue="1" maxValue="9.9000000000000004" doubleValue="1" id="4Zr-ZP-zKA"/>
+                        <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" increment="0.10000000000000001" minValue="1" maxValue="300" doubleValue="1" id="4Zr-ZP-zKA"/>
                     </stepper>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ITU-xP-thE">
                         <rect key="frame" x="367" y="165" width="19" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" minValue="10" maxValue="47" doubleValue="10" id="Pjr-5j-fqG"/>
+                        <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" minValue="2" maxValue="300" doubleValue="10" id="Pjr-5j-fqG"/>
                     </stepper>
                     <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hL7-g1-MDN">
                         <rect key="frame" x="367" y="37" width="19" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" minValue="15" maxValue="300" doubleValue="15" id="Uyb-JC-L16"/>
+                        <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" minValue="2" maxValue="300" doubleValue="15" id="Uyb-JC-L16"/>
                     </stepper>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2t-ub-eol">
                         <rect key="frame" x="22" y="452" width="246" height="29"/>
