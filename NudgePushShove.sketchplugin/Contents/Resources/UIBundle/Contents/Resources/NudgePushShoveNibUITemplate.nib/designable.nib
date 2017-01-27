@@ -34,7 +34,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" utility="YES" texturedBackground="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
             <rect key="contentRect" x="989" y="530" width="407" height="527"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <value key="minSize" type="size" width="435" height="520"/>
             <view key="contentView" id="1SR-KN-UFV">
                 <rect key="frame" x="0.0" y="0.0" width="407" height="527"/>
@@ -100,6 +100,11 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNe-s7-9Dj">
                         <rect key="frame" x="29" y="166" width="51" height="23"/>
@@ -128,7 +133,7 @@
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIa-4i-s9b">
                         <rect key="frame" x="260" y="302" width="73" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="radio" title="Custom:" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="NeP-TN-TNy">
+                        <buttonCell key="cell" type="radio" title="Custom:" bezelStyle="regularSquare" imagePosition="left" inset="2" id="NeP-TN-TNy">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -143,7 +148,7 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="eE7-cg-99x">
-                        <rect key="frame" x="0.0" y="265" width="435" height="5"/>
+                        <rect key="frame" x="0.0" y="265" width="407" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nB8-Fl-m0r">
@@ -188,7 +193,7 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6cU-9M-SQC">
-                        <rect key="frame" x="0.0" y="132" width="435" height="5"/>
+                        <rect key="frame" x="0.0" y="131" width="407" height="5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EXJ-2g-tZu">
@@ -233,27 +238,27 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Naz-FB-AOz">
-                        <rect key="frame" x="86" y="351" width="75" height="17"/>
+                        <rect key="frame" x="86" y="347" width="75" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-  arrow keys" id="E1W-oS-w9G">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-  Arrow Keys" id="E1W-oS-w9G">
                             <font key="font" size="12" name="HelveticaNeue-Light"/>
                             <color key="textColor" red="0.55294117647058827" green="0.59999999999999998" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43b-d2-mIU">
-                        <rect key="frame" x="71" y="214" width="108" height="19"/>
+                        <rect key="frame" x="71" y="213" width="112" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-  Shift + arrow keys" id="Wdw-WG-8Ih">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-  Shift + Arrow Keys" id="Wdw-WG-8Ih">
                             <font key="font" size="12" name="HelveticaNeue-Light"/>
                             <color key="textColor" red="0.55294117649999996" green="0.59999999999999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-ch-Nlm">
-                        <rect key="frame" x="80" y="81" width="140" height="19"/>
+                        <rect key="frame" x="80" y="81" width="162" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-  Ctrl + Shift + arrow keys" id="Ath-Wg-gbG">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="-  Option + Shift + Arrow Keys" id="Ath-Wg-gbG">
                             <font key="font" size="12" name="HelveticaNeue-Light"/>
                             <color key="textColor" red="0.55294117649999996" green="0.59999999999999998" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
