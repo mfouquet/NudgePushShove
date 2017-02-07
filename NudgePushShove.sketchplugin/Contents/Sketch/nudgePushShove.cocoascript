@@ -14,7 +14,7 @@ var onRun = function(context) {
   [COSCRIPT setShouldKeepAround:true];
   var defaults = [NSUserDefaults standardUserDefaults];
   var nibui = new NibUI(context, 'UIBundle', 'NudgePushShoveNibUITemplate', [
-    'mainWindow',
+    'mainWindow', 'imgLogo',
     'radio2', 'radio4', 'radio8',
     'radio16', 'radio24', 'radio32',
     'radio48', 'radio64', 'radio128',
@@ -29,6 +29,12 @@ var onRun = function(context) {
   var scriptFolder = [scriptPath stringByDeletingLastPathComponent];
   var settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
 
+  // Load up the image logo
+  var plugin = context.plugin
+  var imageFilePath=[plugin urlForResourceNamed:"logo.png"]
+  var imageData = [NSData dataWithContentsOfURL:imageFilePath]
+  var image = NSImage.alloc().initWithData(imageData)
+  nibui.imgLogo.setImage(image);
 
   // Set up the Nudge row
   if (settingsFile.nudge == "2") {

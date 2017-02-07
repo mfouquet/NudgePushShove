@@ -5,6 +5,7 @@
 
 /* View bindings go here */
 @property IBOutlet NSWindow *mainWindow;
+@property IBOutlet NSImageView *imgLogo;
 @property IBOutlet NSButton *radio2;
 @property IBOutlet NSButton *radio4;
 @property IBOutlet NSButton *radio8;
