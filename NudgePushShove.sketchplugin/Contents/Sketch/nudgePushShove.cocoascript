@@ -6,8 +6,23 @@ var DEBUG = [[NSUserDefaults standardUserDefaults] boolForKey:'NudgePushShoveDeb
 var COSCRIPT;
 
 var onRun = function(context) {
-  // Check for updates
-  // checkForPluginUpdate(context);
+  var app = NSApplication.sharedApplication();
+
+  // Determine if the plugin window is already open
+  var openWindow = false;
+
+  for (var i = 0; i < app.windows().count(); i++) {
+    var window = app.windows().objectAtIndex(i);
+    // Probably want to find a better way of doing this
+    if (window.title() == '') {
+      openWindow = true;
+    }
+  }
+
+  if (openWindow) {
+    openWindow.makeKeyAndOrderFront(null);
+    return;
+  }
 
   // Prepare the NIB so we can do stuff with the UI
   COSCRIPT = [COScript currentCOScript];
