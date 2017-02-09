@@ -1,6 +1,6 @@
 # Nudge, Push, Shove.
 
-Changing the nudge settings in Sketch used to require a trip to the terminal. _Used to_. Now you can change those settings easily with a plugin. In addition, there's new hotkeys to make huge nudges if you need to.
+Changing the nudge settings in Sketch used to require a trip to the terminal. _Used to_. Now you can change those settings easily with this plugin. In addition, there's new hotkeys to make even bigger nudges if you need to.
 
 Read more about it in this [Medium post](https://medium.com/@_fookay/nudge-push-shove-sketch-plugin-3cc15b6ba62a#.x7wpsuuht).
 
