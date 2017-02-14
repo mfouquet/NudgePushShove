@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="UniformNibOwner">
+        <customObject id="-2" userLabel="File's Owner" customClass="NudgePushShoveNibOwner">
             <connections>
                 <outlet property="imgLogo" destination="9AS-Gu-2k0" id="d50-sa-saw"/>
                 <outlet property="mainWindow" destination="Kh6-MK-crO" id="YTy-QR-nfW"/>
@@ -224,15 +224,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <stepperCell key="cell" continuous="YES" enabled="NO" alignment="left" minValue="2" maxValue="300" doubleValue="15" id="Uyb-JC-L16"/>
                     </stepper>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2t-ub-eol">
-                        <rect key="frame" x="22" y="452" width="246" height="29"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nudge, Push, Shove." id="jCe-J8-zkW">
-                            <font key="font" size="24" name="HelveticaNeue-Bold"/>
-                            <color key="textColor" red="0.92941176470588238" green="0.94901960784313721" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Naz-FB-AOz">
                         <rect key="frame" x="86" y="347" width="75" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

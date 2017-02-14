@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/michael.fouquet/Library/Application Support/com.bohemiancoding.sketch3/Plugins/SketchNibUITemplatePlugin.sketchplugin/Contents/Resources/XCodeProject/HudlUniformNibUI/UniformNibUITemplate.xcodeproj">
+      location = "self:/Users/michael.fouquet/Library/Application Support/com.bohemiancoding.sketch3/Plugins/SketchNibUITemplatePlugin.sketchplugin/Contents/Resources/XCodeProject/NudgePushShoveNibUI/NudgePushShoveNibUITemplate.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 
-@interface UniformNibOwner : NSObject
+@interface NudgePushShoveNibOwner : NSObject
 
 
 /* View bindings go here */
@@ -29,5 +29,5 @@
 
 @end
 
-@implementation UniformNibOwner
+@implementation NudgePushShoveNibOwner
 @end

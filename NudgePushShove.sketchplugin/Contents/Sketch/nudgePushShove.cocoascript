@@ -7,10 +7,27 @@ var COSCRIPT;
 var onRun = function(context) {
   var app = NSApplication.sharedApplication();
 
+  // Determine if the plugin window is already open
+  var openWindow = false;
+
+  for (var i = 0; i < app.windows().count(); i++) {
+    var window = app.windows().objectAtIndex(i);
+    // Probably want to find a better way of doing this
+    if (window.title() == '') {
+      openWindow = true;
+      window.makeKeyAndOrderFront(null);
+    }
+  }
+
+  if (openWindow) {
+    return;
+  }
+
   // Prepare the NIB so we can do stuff with the UI
   COSCRIPT = [COScript currentCOScript];
   [COSCRIPT setShouldKeepAround:true];
   var defaults = [NSUserDefaults standardUserDefaults];
+
   var nibui = new NibUI(context, 'UIBundle', 'NudgePushShoveNibUITemplate', [
     'mainWindow', 'imgLogo',
     'radio2', 'radio4', 'radio8',
@@ -21,26 +38,11 @@ var onRun = function(context) {
     'stepperCustomNudge', 'stepperCustomPush', 'stepperCustomShove'
   ]);
 
-  // Determine if the plugin window is already open
-  var openWindow = false;
-
-  for (var i = 0; i < app.windows().count(); i++) {
-    var window = app.windows().objectAtIndex(i);
-    // Probably want to find a better way of doing this
-    if (window.title() == '') {
-      openWindow = true;
-    }
-  }
-
-  if (openWindow) {
-    nibui.mainWindow.makeKeyAndOrderFront(null);
-    return;
-  }
-
   // Get some common variables handy and then load up the settings file
   var scriptPath = context.scriptPath;
   var scriptFolder = [scriptPath stringByDeletingLastPathComponent];
   var settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
+
 
   // Load up the image logo
   var plugin = context.plugin
