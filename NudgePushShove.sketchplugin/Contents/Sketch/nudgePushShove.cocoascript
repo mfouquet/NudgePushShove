@@ -7,239 +7,73 @@ var COSCRIPT;
 var onRun = function(context) {
   var app = NSApplication.sharedApplication();
 
-  // Determine if the plugin window is already open
-  var openWindow = false;
-
-  for (var i = 0; i < app.windows().count(); i++) {
-    var window = app.windows().objectAtIndex(i);
-    // Probably want to find a better way of doing this
-    if (window.title() == '') {
-      openWindow = true;
-      window.makeKeyAndOrderFront(null);
-    }
-  }
-
-  if (openWindow) {
-    return;
-  }
-
   // Prepare the NIB so we can do stuff with the UI
   COSCRIPT = [COScript currentCOScript];
   [COSCRIPT setShouldKeepAround:true];
   var defaults = [NSUserDefaults standardUserDefaults];
 
   var nibui = new NibUI(context, 'UIBundle', 'NudgePushShoveNibUITemplate', [
-    'mainWindow', 'imgLogo',
-    'radio2', 'radio4', 'radio8',
-    'radio16', 'radio24', 'radio32',
-    'radio48', 'radio64', 'radio128',
+    'mainWindow',
     'textCustomNudge', 'textCustomPush', 'textCustomShove',
-    'radioCustomNudge', 'radioCustomPush', 'radioCustomShove',
-    'stepperCustomNudge', 'stepperCustomPush', 'stepperCustomShove'
+    'btnWebsite', 'btnHelp', 'btnVersion',
+    'btnSave', 'btnReset'
   ]);
+
+  nibui.mainWindow.setTitlebarAppearsTransparent(true);
+  var mainWindow = nibui.mainWindow;
+  [[mainWindow standardWindowButton:NSWindowCloseButton] setHidden:false]
+  [[mainWindow standardWindowButton:NSWindowMiniaturizeButton] setHidden:true]
+  [[mainWindow standardWindowButton:NSWindowZoomButton] setHidden:true]
+
+  nibui.btnSave.setCornerRadius(4);
 
   // Get some common variables handy and then load up the settings file
   var scriptPath = context.scriptPath;
   var scriptFolder = [scriptPath stringByDeletingLastPathComponent];
   var settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
 
-
-  // Load up the image logo
-  var plugin = context.plugin
-  var imageFilePath=[plugin urlForResourceNamed:"logo.png"]
-  var imageData = [NSData dataWithContentsOfURL:imageFilePath]
-  var image = NSImage.alloc().initWithData(imageData)
-  nibui.imgLogo.setImage(image);
-
   // Set up the Nudge row
-  if (settingsFile.nudge == "2") {
-    nibui.radio2.setState(NSOnState);
-  } else if (settingsFile.nudge == "4") {
-    nibui.radio4.setState(NSOnState);
-  } else if (settingsFile.nudge == "8") {
-    nibui.radio8.setState(NSOnState);
-  } else {
-    nibui.radioCustomNudge.setState(NSOnState);
-
-    nibui.textCustomNudge.setEnabled(true);
-    nibui.textCustomNudge.setStringValue(settingsFile.nudge);
-    nibui.stepperCustomNudge.setEnabled(true);
-    nibui.stepperCustomNudge.setStringValue(settingsFile.nudge);
-  }
+  nibui.textCustomNudge.setStringValue(settingsFile.nudge);
+  nibui.textCustomNudge.setWantsLayer(true);
+  nibui.textCustomNudge.setCornerRadius(4);
 
 
   // Set up the Push row
-  if (settingsFile.push == "16") {
-    nibui.radio16.setState(NSOnState);
-  } else if (settingsFile.push == "24") {
-    nibui.radio24.setState(NSOnState);
-  } else if (settingsFile.push == "32") {
-    nibui.radio32.setState(NSOnState);
-  } else {
-    nibui.radioCustomPush.setState(NSOnState);
-
-    nibui.textCustomPush.setEnabled(true);
-    nibui.textCustomPush.setStringValue(settingsFile.push);
-    nibui.stepperCustomPush.setEnabled(true);
-    nibui.stepperCustomPush.setStringValue(settingsFile.push);
-  }
-
+  nibui.textCustomPush.setStringValue(settingsFile.push);
+  nibui.textCustomPush.setWantsLayer(true);
+  nibui.textCustomPush.setCornerRadius(4);
 
   // Set up the Shove row
-  if (settingsFile.shove == "48") {
-    nibui.radio48.setState(NSOnState);
-  } else if (settingsFile.shove == "64") {
-    nibui.radio64.setState(NSOnState);
-  } else if (settingsFile.shove == "128") {
-    nibui.radio128.setState(NSOnState);
-  } else {
-    nibui.radioCustomShove.setState(NSOnState);
+  nibui.textCustomShove.setStringValue(settingsFile.shove);
+  nibui.textCustomShove.setWantsLayer(true);
+  nibui.textCustomShove.setCornerRadius(4);
 
-    nibui.textCustomShove.setEnabled(true);
-    nibui.textCustomShove.setStringValue(settingsFile.shove);
-    nibui.stepperCustomShove.setEnabled(true);
-    nibui.stepperCustomShove.setStringValue(settingsFile.shove);
-  }
+  nibui.attachTargetAndAction(nibui.btnSave, function() {
+    updateNudgeDistance("Small", nibui.textCustomNudge.stringValue());
+    saveJsonToFile(context, "nudge", nibui.textCustomNudge.stringValue());
 
+    updateNudgeDistance("Big", nibui.textCustomPush.stringValue());
+    saveJsonToFile(context, "push", nibui.textCustomPush.stringValue());
 
-  // Actions for the Nudge row
-  nibui.attachTargetAndAction(nibui.radio2, function() {
-    updateNudgeDistance("Small", "2.0");
-    nibui.radio4.setState(NSOffState);
-    nibui.radio8.setState(NSOffState);
-    nibui.radioCustomNudge.setState(NSOffState);
-    nibui.textCustomNudge.setEnabled(false);
-    nibui.stepperCustomNudge.setEnabled(false);
-    saveJsonToFile(context, "nudge", "2");
+    saveJsonToFile(context, "shove", nibui.textCustomShove.stringValue());
   });
 
-  nibui.attachTargetAndAction(nibui.radio4, function() {
-    updateNudgeDistance("Small", "4.0");
-    nibui.radio2.setState(NSOffState);
-    nibui.radio8.setState(NSOffState);
-    nibui.radioCustomNudge.setState(NSOffState);
-    nibui.textCustomNudge.setEnabled(false);
-    nibui.stepperCustomNudge.setEnabled(false);
-    saveJsonToFile(context, "nudge", "4");
+  nibui.attachTargetAndAction(nibui.btnReset, function() {
+    updateNudgeDistance("Small", "1");
+    saveJsonToFile(context, "nudge", "1");
+
+    nibui.textCustomNudge.setStringValue("1");
+
+    updateNudgeDistance("Big", "10");
+    saveJsonToFile(context, "push", "10");
+
+
+    nibui.textCustomPush.setStringValue("10");
+
+    saveJsonToFile(context, "shove", "15");
+
+    nibui.textCustomShove.setStringValue("15")
   });
-
-  nibui.attachTargetAndAction(nibui.radio8, function() {
-    updateNudgeDistance("Small", "8.0");
-    nibui.radio2.setState(NSOffState);
-    nibui.radio4.setState(NSOffState);
-    nibui.radioCustomNudge.setState(NSOffState);
-    nibui.textCustomNudge.setEnabled(false);
-    nibui.stepperCustomNudge.setEnabled(false);
-    saveJsonToFile(context, "nudge", "8");
-  });
-
-  nibui.attachTargetAndAction(nibui.radioCustomNudge, function() {
-    nibui.radio2.setState(NSOffState);
-    nibui.radio4.setState(NSOffState);
-    nibui.radio8.setState(NSOffState);
-    nibui.textCustomNudge.setEnabled(true);
-    nibui.stepperCustomNudge.setEnabled(true);
-    updateNudgeDistance("Small", nibui.stepperCustomNudge.stringValue());
-    saveJsonToFile(context, "nudge", nibui.stepperCustomNudge.stringValue());
-  });
-
-  nibui.attachTargetAndAction(nibui.stepperCustomNudge, function() {
-    nibui.textCustomNudge.setStringValue(nibui.stepperCustomNudge.stringValue());
-    updateNudgeDistance("Small", nibui.stepperCustomNudge.stringValue());
-    saveJsonToFile(context, "nudge", nibui.stepperCustomNudge.stringValue());
-  });
-
-
-  // Actions for the Push row
-  nibui.attachTargetAndAction(nibui.radio16, function() {
-    updateNudgeDistance("Big", "16.0");
-    nibui.radio24.setState(NSOffState);
-    nibui.radio32.setState(NSOffState);
-    nibui.radioCustomPush.setState(NSOffState);
-    nibui.textCustomPush.setEnabled(false);
-    nibui.stepperCustomPush.setEnabled(false);
-    saveJsonToFile(context, "push", "16");
-  });
-
-  nibui.attachTargetAndAction(nibui.radio24, function() {
-    updateNudgeDistance("Big", "24.0");
-    nibui.radio16.setState(NSOffState);
-    nibui.radio32.setState(NSOffState);
-    nibui.radioCustomPush.setState(NSOffState);
-    nibui.textCustomPush.setEnabled(false);
-    nibui.stepperCustomPush.setEnabled(false);
-    saveJsonToFile(context, "push", "24");
-  });
-
-  nibui.attachTargetAndAction(nibui.radio32, function() {
-    updateNudgeDistance("Big", "32.0");
-    nibui.radio16.setState(NSOffState);
-    nibui.radio24.setState(NSOffState);
-    nibui.radioCustomPush.setState(NSOffState);
-    nibui.textCustomPush.setEnabled(false);
-    nibui.stepperCustomPush.setEnabled(false);
-    saveJsonToFile(context, "push", "32");
-  });
-
-  nibui.attachTargetAndAction(nibui.radioCustomPush, function() {
-    nibui.radio16.setState(NSOffState);
-    nibui.radio24.setState(NSOffState);
-    nibui.radio32.setState(NSOffState);
-    nibui.textCustomPush.setEnabled(true);
-    nibui.stepperCustomPush.setEnabled(true);
-    updateNudgeDistance("Big", nibui.stepperCustomPush.stringValue());
-    saveJsonToFile(context, "push", nibui.stepperCustomPush.stringValue());
-  });
-
-  nibui.attachTargetAndAction(nibui.stepperCustomPush, function() {
-    nibui.textCustomPush.setStringValue(nibui.stepperCustomPush.stringValue());
-    updateNudgeDistance("Big", nibui.stepperCustomPush.stringValue());
-    saveJsonToFile(context, "push", nibui.stepperCustomPush.stringValue());
-  });
-
-
-  // Actions for the Shove row
-  nibui.attachTargetAndAction(nibui.radio48, function() {
-    nibui.radio64.setState(NSOffState);
-    nibui.radio128.setState(NSOffState);
-    nibui.radioCustomShove.setState(NSOffState);
-    nibui.textCustomShove.setEnabled(false);
-    nibui.stepperCustomShove.setEnabled(false);
-    saveJsonToFile(context, "shove", "48");
-  });
-
-  nibui.attachTargetAndAction(nibui.radio64, function() {
-    nibui.radio48.setState(NSOffState);
-    nibui.radio128.setState(NSOffState);
-    nibui.radioCustomShove.setState(NSOffState);
-    nibui.textCustomShove.setEnabled(false);
-    nibui.stepperCustomShove.setEnabled(false);
-    saveJsonToFile(context, "shove", "64");
-  });
-
-  nibui.attachTargetAndAction(nibui.radio128, function() {
-    nibui.radio48.setState(NSOffState);
-    nibui.radio64.setState(NSOffState);
-    nibui.radioCustomShove.setState(NSOffState);
-    nibui.textCustomShove.setEnabled(false);
-    nibui.stepperCustomShove.setEnabled(false);
-    saveJsonToFile(context, "shove", "128");
-  });
-
-  nibui.attachTargetAndAction(nibui.radioCustomShove, function() {
-    nibui.radio48.setState(NSOffState);
-    nibui.radio64.setState(NSOffState);
-    nibui.radio128.setState(NSOffState);
-    nibui.textCustomShove.setEnabled(true);
-    nibui.stepperCustomShove.setEnabled(true);
-    saveJsonToFile(context, "shove", nibui.stepperCustomShove.stringValue());
-  });
-
-  nibui.attachTargetAndAction(nibui.stepperCustomShove, function() {
-    nibui.textCustomShove.setStringValue(nibui.stepperCustomShove.stringValue());
-    saveJsonToFile(context, "shove", nibui.stepperCustomShove.stringValue());
-  });
-
 
   // Make the window on top and keep it there
   nibui.mainWindow.makeKeyAndOrderFront(null);
