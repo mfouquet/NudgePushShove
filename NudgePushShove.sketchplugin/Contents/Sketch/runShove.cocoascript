@@ -50,9 +50,8 @@ function getShoveAmount(context) {
   var kShoveAmount = kPluginDomain + ".shoveAmount"
 
   if (!mainThreadDict[kShoveAmount]) {
-    const scriptPath = context.scriptPath;
-    const scriptFolder = [scriptPath stringByDeletingLastPathComponent];
-    const settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
+    const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
+    const settingsFile = jsonFromFile(scriptPath + '/utils/settings.js', true);
 
     shoveAmount = settingsFile.shove;
     mainThreadDict[kShoveAmount] = shoveAmount;

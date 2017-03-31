@@ -8,6 +8,31 @@
       "identifier" : "nudgePushShove"
     },
     {
+      "identifier" : "shoveUp",
+      "script" : "runShove.cocoascript",
+      "handler" : "shoveUp",
+      "shortcut": "option shift ↑",
+      "name": "Shove Up"
+    },
+    {
+      "identifier" : "shoveRight",
+      "script" : "runShove.cocoascript",
+      "handler" : "shoveRight",
+      "shortcut": "option shift →",
+    },
+    {
+      "identifier" : "shoveDown",
+      "script" : "runShove.cocoascript",
+      "handler" : "shoveDown",
+      "shortcut": "option shift ↓",
+    },
+    {
+      "identifier" : "shoveLeft",
+      "script" : "runShove.cocoascript",
+      "handler" : "shoveLeft",
+      "shortcut": "option shift ←",
+    },
+    {
       "identifier" : "adjustNudge1",
       "script" : "adjustNudge.cocoascript",
       "handler" : "adjustNudge1",
@@ -81,7 +106,7 @@
     },
   ],
   "menu" : {
-    "title": "Nudge, Push, Shove.",
+    "title": "Nudge, Push, Shove",
     "items" : [
       "nudgePushShove",
       "-",
@@ -98,7 +123,17 @@
       "adjustShove15",
       "adjustShove48",
       "adjustShove64",
-      "adjustShove128"
+      "adjustShove128",
+      "-",
+      {
+        "title": "Shove",
+        "items": [
+          "shoveUp",
+          "shoveRight",
+          "shoveDown",
+          "shoveLeft",
+        ]
+      }
     ]
   },
   "identifier" : "com.example.sketch.nudgepushshove",
