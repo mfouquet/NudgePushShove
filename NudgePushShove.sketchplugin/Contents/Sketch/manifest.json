@@ -4,46 +4,101 @@
       "script" : "nudgePushShove.cocoascript",
       "handler" : "onRun",
       "shortcut" : "ctrl cmd n",
-      "name" : "Adjust Nudge Settings",
+      "name" : "Change Nudge Settings",
       "identifier" : "nudgePushShove"
     },
     {
-      "identifier" : "shoveUp",
-      "script" : "runShove.cocoascript",
-      "handler" : "shoveUp",
-      "shortcut": "option shift ↑",
-      "name": "Shove Up"
+      "identifier" : "adjustNudge1",
+      "script" : "adjustNudge.cocoascript",
+      "handler" : "adjustNudge1",
+      "name": "Set Nudge to 1"
     },
     {
-      "identifier" : "shoveRight",
-      "script" : "runShove.cocoascript",
-      "handler" : "shoveRight",
-      "shortcut": "option shift →",
-      "name": "Shove Right"
+      "identifier" : "adjustNudge2",
+      "script" : "adjustNudge.cocoascript",
+      "handler" : "adjustNudge2",
+      "name": "Set Nudge to 2"
     },
     {
-      "identifier" : "shoveDown",
-      "script" : "runShove.cocoascript",
-      "handler" : "shoveDown",
-      "shortcut": "option shift ↓",
-      "name": "Shove Down"
+      "identifier" : "adjustNudge4",
+      "script" : "adjustNudge.cocoascript",
+      "handler" : "adjustNudge4",
+      "name": "Set Nudge to 4"
     },
     {
-      "identifier" : "shoveLeft",
-      "script" : "runShove.cocoascript",
-      "handler" : "shoveLeft",
-      "shortcut": "option shift ←",
-      "name": "Shove Left"
+      "identifier" : "adjustNudge8",
+      "script" : "adjustNudge.cocoascript",
+      "handler" : "adjustNudge8",
+      "name": "Set Nudge to 8"
+    },
+    {
+      "identifier" : "adjustPush10",
+      "script" : "adjustPush.cocoascript",
+      "handler" : "adjustPush10",
+      "name": "Set Push to 10"
+    },
+    {
+      "identifier" : "adjustPush16",
+      "script" : "adjustPush.cocoascript",
+      "handler" : "adjustPush16",
+      "name": "Set Push to 16"
+    },
+    {
+      "identifier" : "adjustPush24",
+      "script" : "adjustPush.cocoascript",
+      "handler" : "adjustPush24",
+      "name": "Set Push to 24"
+    },
+    {
+      "identifier" : "adjustPush32",
+      "script" : "adjustPush.cocoascript",
+      "handler" : "adjustPush32",
+      "name": "Set Push to 32"
+    },
+    {
+      "identifier" : "adjustShove15",
+      "script" : "adjustShove.cocoascript",
+      "handler" : "adjustShove15",
+      "name": "Set Push to 15"
+    },
+    {
+      "identifier" : "adjustShove48",
+      "script" : "adjustShove.cocoascript",
+      "handler" : "adjustShove48",
+      "name": "Set Push to 48"
+    },
+    {
+      "identifier" : "adjustShove64",
+      "script" : "adjustShove.cocoascript",
+      "handler" : "adjustShove64",
+      "name": "Set Push to 64"
+    },
+    {
+      "identifier" : "adjustShove128",
+      "script" : "adjustShove.cocoascript",
+      "handler" : "adjustShove128",
+      "name": "Set Push to 128"
     },
   ],
   "menu" : {
     "title": "Nudge, Push, Shove.",
     "items" : [
       "nudgePushShove",
-      "shoveUp",
-      "shoveRight",
-      "shoveDown",
-      "shoveLeft"
+      "-",
+      "adjustNudge1",
+      "adjustNudge2",
+      "adjustNudge4",
+      "adjustNudge8",
+      "-",
+      "adjustPush10",
+      "adjustPush16",
+      "adjustPush24",
+      "adjustPush32",
+      "-",
+      "adjustShove15",
+      "adjustShove48",
+      "adjustShove64",
+      "adjustShove128"
     ]
   },
   "identifier" : "com.example.sketch.nudgepushshove",

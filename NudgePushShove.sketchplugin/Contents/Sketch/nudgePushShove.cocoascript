@@ -1,6 +1,5 @@
 @import 'utils/nibui.js';
 @import 'utils/json.js';
-@import 'utils/update.js';
 
 var COSCRIPT;
 var app;
