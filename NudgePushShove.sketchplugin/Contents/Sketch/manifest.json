@@ -23,14 +23,14 @@
     },
     {
       "identifier" : "shoveDown",
-      "script" : "shoveDown.cocoascript",
+      "script" : "runShove.cocoascript",
       "handler" : "shoveDown",
       "shortcut": "option shift ↓",
       "name": "Shove Down"
     },
     {
       "identifier" : "shoveLeft",
-      "script" : "shoveLeft.cocoascript",
+      "script" : "runShove.cocoascript",
       "handler" : "shoveLeft",
       "shortcut": "option shift ←",
       "name": "Shove Left"

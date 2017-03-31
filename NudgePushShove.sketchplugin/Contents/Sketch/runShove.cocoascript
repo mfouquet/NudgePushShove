@@ -22,13 +22,43 @@ function shoveObjects(context, direction) {
   var document = sketch.selectedDocument;
   var selection = document.selectedLayers;
 
-  const scriptPath = context.scriptPath;
-  const scriptFolder = [scriptPath stringByDeletingLastPathComponent];
-  const settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
+  var shoveAmount = getShoveAmount(context);
+  var sketchLayer;
 
-  selection.iterate(function(item) {
-    item.sketchObject.frame().setX(parseFloat(item.sketchObject.frame().x()) - parseFloat(settingsFile.shove));
+  selection.iterate(function(layer) {
+    sketchLayer = layer.sketchObject;
+
+    if (direction === 'up') {
+      sketchLayer.frame().setY(parseFloat(sketchLayer.frame().y()) - parseFloat(shoveAmount));
+    } else if (direction === 'right') {
+      sketchLayer.frame().setX(parseFloat(sketchLayer.frame().x()) + parseFloat(shoveAmount));
+    } else if (direction === 'down') {
+      sketchLayer.frame().setY(parseFloat(sketchLayer.frame().y()) + parseFloat(shoveAmount));
+    } else if (direction === 'left') {
+      sketchLayer.frame().setX(parseFloat(sketchLayer.frame().x()) - parseFloat(shoveAmount));
+    }
   });
 
   document.sketchObject.reloadInspector();
+}
+
+function getShoveAmount(context) {
+  var shoveAmount;
+
+  var mainThreadDict = NSThread.mainThread().threadDictionary();
+  var kPluginDomain = "com.mfouquet.sketch.nudgePushShove";
+  var kShoveAmount = kPluginDomain + ".shoveAmount"
+
+  if (!mainThreadDict[kShoveAmount]) {
+    const scriptPath = context.scriptPath;
+    const scriptFolder = [scriptPath stringByDeletingLastPathComponent];
+    const settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
+
+    shoveAmount = settingsFile.shove;
+    mainThreadDict[kShoveAmount] = shoveAmount;
+  } else {
+    shoveAmount = mainThreadDict[kShoveAmount];
+  }
+
+  return shoveAmount;
 }
