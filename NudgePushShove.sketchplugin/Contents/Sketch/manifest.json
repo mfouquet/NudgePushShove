@@ -9,14 +9,14 @@
     },
     {
       "identifier" : "shoveUp",
-      "script" : "shoveUp.cocoascript",
+      "script" : "runShove.cocoascript",
       "handler" : "shoveUp",
       "shortcut": "option shift ↑",
       "name": "Shove Up"
     },
     {
       "identifier" : "shoveRight",
-      "script" : "shoveRight.cocoascript",
+      "script" : "runShove.cocoascript",
       "handler" : "shoveRight",
       "shortcut": "option shift →",
       "name": "Shove Right"

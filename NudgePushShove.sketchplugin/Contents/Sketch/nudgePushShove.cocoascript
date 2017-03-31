@@ -3,89 +3,96 @@
 @import 'utils/update.js';
 
 var COSCRIPT;
+var app;
 
 var onRun = function(context) {
-  var app = NSApplication.sharedApplication();
+  // ====
+  // Prepare app and COSCRIPT
+  if (!app) app = context.api().Application();
+  COSCRIPT = COScript.currentCOScript();
+  COSCRIPT.setShouldKeepAround(true);
 
+
+  // ====
   // Prepare the NIB so we can do stuff with the UI
-  COSCRIPT = [COScript currentCOScript];
-  [COSCRIPT setShouldKeepAround:true];
-  var defaults = [NSUserDefaults standardUserDefaults];
-
-  var nibui = new NibUI(context, 'UIBundle', 'NudgePushShoveNibUITemplate', [
+  const nibui = new NibUI(context, 'UIBundle', 'NudgePushShoveNibUITemplate', [
     'mainWindow',
     'textCustomNudge', 'textCustomPush', 'textCustomShove',
     'btnWebsite', 'btnHelp', 'btnVersion',
     'btnSave', 'btnReset'
   ]);
 
-  nibui.mainWindow.setTitlebarAppearsTransparent(true);
-  var mainWindow = nibui.mainWindow;
-  [[mainWindow standardWindowButton:NSWindowCloseButton] setHidden:false]
-  [[mainWindow standardWindowButton:NSWindowMiniaturizeButton] setHidden:true]
-  [[mainWindow standardWindowButton:NSWindowZoomButton] setHidden:true]
 
+  // ====
+  // Set up the window styling
+  nibui.mainWindow.setTitlebarAppearsTransparent(true);
+  nibui.mainWindow.standardWindowButton(NSWindowCloseButton).setHidden(false);
+  nibui.mainWindow.standardWindowButton(NSWindowMiniaturizeButton).setHidden(true);
+  nibui.mainWindow.standardWindowButton(NSWindowZoomButton).setHidden(true);
+
+
+  // ====
+  // Load up the settings file
+  const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
+  const settingsFile = jsonFromFile(scriptPath + '/utils/settings.js', true);
+
+
+  // ====
+  // Prepare the rest of the UI
+  nibui.textCustomNudge.setCornerRadius(4);
+  nibui.textCustomPush.setCornerRadius(4);
+  nibui.textCustomShove.setCornerRadius(4);
   nibui.btnSave.setCornerRadius(4);
 
-  // Get some common variables handy and then load up the settings file
-  var scriptPath = context.scriptPath;
-  var scriptFolder = [scriptPath stringByDeletingLastPathComponent];
-  var settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
-
-  // Set up the Nudge row
   nibui.textCustomNudge.setStringValue(settingsFile.nudge);
-  nibui.textCustomNudge.setWantsLayer(true);
-  nibui.textCustomNudge.setCornerRadius(4);
-
-
-  // Set up the Push row
   nibui.textCustomPush.setStringValue(settingsFile.push);
-  nibui.textCustomPush.setWantsLayer(true);
-  nibui.textCustomPush.setCornerRadius(4);
-
-  // Set up the Shove row
   nibui.textCustomShove.setStringValue(settingsFile.shove);
-  nibui.textCustomShove.setWantsLayer(true);
-  nibui.textCustomShove.setCornerRadius(4);
 
+
+  // ====
+  // Attach an action to the Save Button
   nibui.attachTargetAndAction(nibui.btnSave, function() {
-    updateNudgeDistance("Small", nibui.textCustomNudge.stringValue());
-    saveJsonToFile(context, "nudge", nibui.textCustomNudge.stringValue());
-
-    updateNudgeDistance("Big", nibui.textCustomPush.stringValue());
-    saveJsonToFile(context, "push", nibui.textCustomPush.stringValue());
-
-    saveJsonToFile(context, "shove", nibui.textCustomShove.stringValue());
+    updateNudgeDistance(context, nibui);
   });
 
+
+  // ====
+  // Attach an action to the Reset Button
   nibui.attachTargetAndAction(nibui.btnReset, function() {
-    updateNudgeDistance("Small", "1");
-    saveJsonToFile(context, "nudge", "1");
+    updateNudgeDistance(context, nibui, true);
 
     nibui.textCustomNudge.setStringValue("1");
-
-    updateNudgeDistance("Big", "10");
-    saveJsonToFile(context, "push", "10");
-
-
     nibui.textCustomPush.setStringValue("10");
-
-    saveJsonToFile(context, "shove", "15");
-
-    nibui.textCustomShove.setStringValue("15")
+    nibui.textCustomShove.setStringValue("15");
   });
 
-  // Make the window on top and keep it there
+
+  // ====
+  // Finish up UI work
   nibui.mainWindow.makeKeyAndOrderFront(null);
   nibui.destroy();
 }
 
-function updateNudgeDistance(type, amount) {
-  var terminalCommand = "defaults write com.bohemiancoding.sketch3 nudgeDistance" + type + " -float " + amount;
 
-  var terminalTask = NSTask.alloc().init()
-  terminalTask.launchPath = "/bin/bash";
-  terminalTask.arguments = ["-c", terminalCommand];
-  terminalTask.launch();
-  terminalTask.waitUntilExit();
+function updateNudgeDistance(context, nibui, reset) {
+  const settingsObj = {
+    nudge: reset ? "1" : nibui.textCustomNudge.stringValue(),
+    push: reset ? "10" : nibui.textCustomPush.stringValue(),
+    shove: reset ? "15" : nibui.textCustomShove.stringValue()
+  };
+
+  updateSketchNudgeSettings(context, settingsObj);
+  saveJsonToFile(context, settingsObj);
+}
+
+
+function updateSketchNudgeSettings(context, settings) {
+  // We have to save the reference to the app because it doesn't seem
+  // to save between opening and closing of the plugin.
+  // Additionally, this new method on the Application makes it easier
+  // to save the user's settings.  No more NSTask for each setting.
+  // Crack open the following file to see all you can update:
+  // ~/Library/Preferences/com.bohemiancoding.sketch3.plist
+  app.setSettingForKey("nudgeDistanceSmall", settings.nudge)
+  app.setSettingForKey("nudgeDistanceBig", settings.push)
 }

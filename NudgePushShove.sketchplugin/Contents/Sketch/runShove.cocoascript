@@ -1,0 +1,34 @@
+@import 'utils/json.js';
+
+var shoveUp = function(context) {
+  shoveObjects(context, 'up');
+}
+
+var shoveRight = function(context) {
+  shoveObjects(context, 'right');
+}
+
+var shoveDown = function(context) {
+  shoveObjects(context, 'down');
+}
+
+var shoveLeft = function(context) {
+  shoveObjects(context, 'left');
+}
+
+function shoveObjects(context, direction) {
+  var sketch = context.api();
+
+  var document = sketch.selectedDocument;
+  var selection = document.selectedLayers;
+
+  const scriptPath = context.scriptPath;
+  const scriptFolder = [scriptPath stringByDeletingLastPathComponent];
+  const settingsFile = jsonFromFile(scriptFolder + '/utils/settings.js', true);
+
+  selection.iterate(function(item) {
+    item.sketchObject.frame().setX(parseFloat(item.sketchObject.frame().x()) - parseFloat(settingsFile.shove));
+  });
+
+  document.sketchObject.reloadInspector();
+}
