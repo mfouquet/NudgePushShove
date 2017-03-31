@@ -49,6 +49,30 @@ var onRun = function(context) {
 
 
   // ====
+  // Attach an action to the Website Button
+  nibui.attachTargetAndAction(nibui.btnWebsite, function() {
+    NSWorkspace.sharedWorkspace()
+      .openURL(NSURL.URLWithString("https://mfouquet.github.io/NudgePushShove/"));
+  });
+
+
+  // ====
+  // Attach an action to the Help Button
+  nibui.attachTargetAndAction(nibui.btnHelp, function() {
+    NSWorkspace.sharedWorkspace()
+      .openURL(NSURL.URLWithString("https://mfouquet.github.io/NudgePushShove/help.html"));
+  });
+
+
+  // ====
+  // Attach an action to the Version Button
+  nibui.attachTargetAndAction(nibui.btnVersion, function() {
+    NSWorkspace.sharedWorkspace()
+      .openURL(NSURL.URLWithString("https://github.com/mfouquet/NudgePushShove/blob/master/CHANGELOG.md"));
+  });
+
+
+  // ====
   // Attach an action to the Save Button
   nibui.attachTargetAndAction(nibui.btnSave, function() {
     updateNudgeDistance(context, nibui);
