@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
@@ -26,7 +26,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" fullSizeContentView="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
             <rect key="contentRect" x="989" y="530" width="320" height="430"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <value key="minSize" type="size" width="416" height="480"/>
             <value key="maxSize" type="size" width="416" height="480"/>
             <view key="contentView" id="1SR-KN-UFV">
@@ -58,7 +58,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wA-zR-61c">
-                                    <rect key="frame" x="148" y="382" width="39" height="21"/>
+                                    <rect key="frame" x="149" y="382" width="39" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="HelpButton" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="6Qr-Wx-uDm">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -83,7 +83,7 @@
                                     </buttonCell>
                                 </button>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd0-AP-67U">
-                                    <rect key="frame" x="78" y="312" width="85" height="29"/>
+                                    <rect key="frame" x="78" y="309" width="85" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Nudge" id="umk-rg-Iok">
                                         <font key="font" metaFont="systemBlack" size="24"/>
@@ -92,7 +92,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTy-q9-33z">
-                                    <rect key="frame" x="185" y="311" width="56" height="30"/>
+                                    <rect key="frame" x="177" y="308" width="64" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" title="5" drawsBackground="YES" usesSingleLineMode="YES" id="qvA-EJ-ALh">
                                         <font key="font" metaFont="systemMedium" size="26"/>
@@ -101,7 +101,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="4hS-cx-abx">
-                                    <rect key="frame" x="56" y="286" width="208" height="1"/>
+                                    <rect key="frame" x="56" y="283" width="208" height="1"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <view key="contentView" ambiguous="YES" id="bZc-Jt-rEk">
                                         <rect key="frame" x="0.0" y="0.0" width="208" height="1"/>
@@ -110,7 +110,7 @@
                                     <color key="fillColor" red="0.92941176469999998" green="0.94901960780000005" blue="0.95686274510000002" alpha="0.25002750880000002" colorSpace="calibratedRGB"/>
                                 </box>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcd-w0-ea8">
-                                    <rect key="frame" x="97" y="231" width="66" height="29"/>
+                                    <rect key="frame" x="97" y="228" width="66" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Push" id="B6f-GN-Y2K">
                                         <font key="font" metaFont="systemBlack" size="24"/>
@@ -119,7 +119,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZg-pA-cYE">
-                                    <rect key="frame" x="185" y="230" width="56" height="30"/>
+                                    <rect key="frame" x="177" y="227" width="64" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" title="10" drawsBackground="YES" usesSingleLineMode="YES" id="QSw-ro-leY">
                                         <font key="font" metaFont="systemMedium" size="26"/>
@@ -128,7 +128,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="4" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-VW-HDo">
-                                    <rect key="frame" x="56" y="205" width="208" height="1"/>
+                                    <rect key="frame" x="56" y="202" width="208" height="1"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <view key="contentView" ambiguous="YES" id="EbL-fw-M15">
                                         <rect key="frame" x="0.0" y="0.0" width="208" height="1"/>
@@ -137,7 +137,7 @@
                                     <color key="fillColor" red="0.92941176470588238" green="0.94901960784313721" blue="0.95686274509803915" alpha="0.25002750880281688" colorSpace="calibratedRGB"/>
                                 </box>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBc-UG-adV">
-                                    <rect key="frame" x="82" y="151" width="81" height="29"/>
+                                    <rect key="frame" x="82" y="148" width="81" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Shove" id="sWH-Pg-Nyt">
                                         <font key="font" metaFont="systemBlack" size="24"/>
@@ -146,7 +146,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krv-8w-QVk">
-                                    <rect key="frame" x="185" y="150" width="56" height="30"/>
+                                    <rect key="frame" x="177" y="147" width="64" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="center" title="15" drawsBackground="YES" usesSingleLineMode="YES" id="2Ca-qa-sHf">
                                         <font key="font" metaFont="systemMedium" size="26"/>
@@ -155,7 +155,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJ7-5e-xrh">
-                                    <rect key="frame" x="56" y="58" width="208" height="44"/>
+                                    <rect key="frame" x="56" y="59" width="208" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="SaveButton" imagePosition="overlaps" alignment="center" state="on" imageScaling="axesIndependently" inset="2" id="hbk-hb-fsI">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -163,7 +163,7 @@
                                     </buttonCell>
                                 </button>
                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JSN-YT-D3f">
-                                    <rect key="frame" x="120" y="18" width="81" height="32"/>
+                                    <rect key="frame" x="142" y="20" width="36" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="ResetButton" imagePosition="overlaps" alignment="center" imageScaling="axesIndependently" inset="2" id="6q2-37-b27">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -181,7 +181,7 @@
     </objects>
     <resources>
         <image name="HelpButton" width="120" height="84"/>
-        <image name="ResetButton" width="324" height="128"/>
+        <image name="ResetButton" width="144" height="84"/>
         <image name="SaveButton" width="832" height="176"/>
         <image name="VersionButton" width="120" height="84"/>
         <image name="WebsiteButton" width="212" height="84"/>
