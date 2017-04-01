@@ -1,5 +1,8 @@
 $color-bg-dark: rgba(29, 45, 68, 1);
+$color-bg-light: rgba(237, 242, 244, 1);
 $color-text-light: rgba(237, 242, 244, 1);
+$color-text-dark: rgba(29, 45, 68, 1);
+
 $color-text-lighter: rgba(237, 242, 244, 0.75);
 $color-divider: rgba(237, 242, 244, 0.25);
 
@@ -34,6 +37,29 @@ h1 {
   padding-bottom: 16px;
 }
 
+h2 {
+  color: $color-text-dark;
+  margin: 0;
+  font-weight: 900;
+  font-size: 2.25rem;
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+h2.light {
+  color: $color-text-light;
+}
+
+h3 {
+  color: $color-text-lighter;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  padding-top: 3rem;
+}
+
 h4 {
   color: $color-text-light;
   font-size: 1.25rem;
@@ -61,6 +87,29 @@ h5 {
   padding-bottom: 48px;
 }
 
+p {
+  margin: 0;
+  padding-top: 1rem;
+  font-size: 16px;
+  color: $color-text-dark;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+p:last-child {
+  padding-bottom: 4rem;
+}
+
+p.light {
+  color: $color-text-lighter;
+}
+
+p.small {
+  font-size: 0.875rem;
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
 button {
   background-color: rgba(138, 205, 79, 1);
   outline: none;
@@ -79,6 +128,14 @@ button {
   background-color: $color-bg-dark;
 }
 
+.light-bg {
+  background-color: $color-bg-light;
+}
+
+.white-bg {
+  background-color: white;
+}
+
 .divider {
   height: 1px;
   max-width: 28rem;
@@ -94,11 +151,11 @@ button {
   display: flex;
   justify-content: center;
   padding-bottom: 64px;
+}
 
-  a {
-    color: $color-text-light;
-    font-weight: 300;
-  }
+a {
+  color: $color-text-light;
+  font-weight: 300;
 }
 
 .link-divider {
@@ -110,4 +167,12 @@ button {
   margin-top: 8px;
   margin-left: 16px;
   margin-right: 16px;
+}
+
+.two-col {
+  display: flex;
+}
+
+.half {
+  width: 50%;
 }
