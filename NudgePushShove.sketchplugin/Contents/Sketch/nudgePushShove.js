@@ -11,6 +11,24 @@ var onRun = function(context) {
   COSCRIPT = COScript.currentCOScript();
   COSCRIPT.setShouldKeepAround(true);
 
+  var sharedApp = NSApplication.sharedApplication();
+
+  // Determine if the plugin window is already open
+  var openWindow = false;
+
+  for (var i = 0; i < sharedApp.windows().count(); i++) {
+    var window = sharedApp.windows().objectAtIndex(i);
+
+    if (window.identifier() == 'nudgepushshove') {
+      openWindow = true;
+      window.makeKeyAndOrderFront(null);
+    }
+  }
+
+  if (openWindow) {
+    return;
+  }
+
 
   // ====
   // Prepare the NIB so we can do stuff with the UI
@@ -93,6 +111,7 @@ var onRun = function(context) {
   // ====
   // Finish up UI work
   nibui.mainWindow.makeKeyAndOrderFront(null);
+  nibui.mainWindow.setLevel(NSFloatingWindowLevel);
   nibui.destroy();
 }
 
