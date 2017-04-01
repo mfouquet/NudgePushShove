@@ -5,9 +5,9 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 
 ## Installation
 
-⚠️ - _If you were one of the 3 people that installed the previous version, be sure to uninstall it before trying to install this new version. Sorry!_
+⚠️ - _If you were one of the 3 or 4 people that installed the previous version, be sure to uninstall it before trying to install this new version. Sorry!_
 
-#### Preferred
+#### Recommended
 * Install via [Sketch Runner](http://sketchrunner.com/), [Sketchpacks](https://sketchpacks.com/), or [Sketch Toolbox](http://sketchtoolbox.com/) by searching for Nudge, Push, Shove.
 
 #### Old-Fashioned
