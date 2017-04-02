@@ -2,6 +2,8 @@
 
 $color-bg-dark: rgba(29, 45, 68, 1);
 $color-bg-light: rgba(237, 242, 244, 1);
+$color-bg-white: rgba(255, 255, 255, 1);
+
 $color-text-light: rgba(237, 242, 244, 1);
 $color-text-dark: rgba(29, 45, 68, 1);
 
@@ -25,6 +27,32 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   margin: 0;
+}
+
+.key {
+  display: inline-block;
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $color-bg-dark;
+  vertical-align: middle;
+  background-color: darken($color-bg-white, 2%);
+  border: solid 1px darken($color-bg-white, 20%);
+  border-bottom-color: darken($color-bg-white, 30%);
+  border-radius: 0.25rem;
+  box-shadow: inset 0 -1px 0 darken($color-bg-white, 30%);
+  transform-style: preserve-3d;
+  transition: all 0.15s;
+
+  &:not(:last-child) {
+    margin-right: 0.25rem;
+  }
+
+  &.pressed,
+  &:hover {
+    transform: translateY(1px);
+    box-shadow: inset 0 0 0 darken($color-bg-white, 30%);
+  }
 }
 
 
@@ -183,6 +211,12 @@ body {
     max-width: 5.5rem;
     margin-right: 1rem;
     margin-left: 3.25rem;
+    transform-style: preserve-3d;
+    transition: all 0.25s;
+
+    &:focus {
+      transform: scale(1.05);
+    }
   }
 
   .try__settings-divider {
@@ -363,7 +397,7 @@ body {
     img {
       transform-style: preserve-3d;
       transition: all 0.25s;
-      
+
       &:first-child {
         margin-right: 24px;
       }

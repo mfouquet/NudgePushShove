@@ -58,17 +58,17 @@
           <div class="try__settings">
             <div class="try__settings-row">
               <h2 class="try__settings-title">Nudge</h2>
-              <input class="try__settings-input" type="number" min=1 max=999 />
+              <input id="settingsNudge" class="try__settings-input" type="number" min=1 max=999 value="1" />
             </div>
             <div class="try__settings-divider"></div>
             <div class="try__settings-row">
               <h2 class="try__settings-title">Push</h2>
-              <input class="try__settings-input" type="number" min=1 max=999 />
+              <input id="settingsPush" class="try__settings-input" type="number" min=1 max=999 value="10" />
             </div>
             <div class="try__settings-divider"></div>
             <div class="try__settings-row">
               <h2 class="try__settings-title">Shove</h2>
-              <input class="try__settings-input" type="number" min=1 max=999 />
+              <input id="settingsShove" class="try__settings-input" type="number" min=1 max=999 value="15" />
             </div>
           </div>
         </div>
@@ -102,26 +102,26 @@
             <li class="divider">- or -</li>
             <li>Navigate to <strong>Plugins</strong> > <strong>Nudge, Push, Shove.</strong> > <strong>Adjust Nudge Settings</strong>. You'll also see a list of predefined 16px grid options here in this same menu as well.</li>
             <li class="divider">- or -</li>
-            <li>Hit ctrl +cmd +n on your keyboard.</li>
+            <li>Hit <span class="key ctrl">ctrl</span>+ <span class="key cmd">cmd</span>+ <span class="key n">n</span> on your keyboard.</li>
           </ul>
 
         </div>
         <div class="usage__hotkey-container">
           <h2 class="usage__title">Nudge.</h2>
           <ul class="usage__hotkey-list">
-            <li>Use ↑↓←→ like normal.</li>
+            <li>Use <span class="key up">↑</span><span class="key down">↓</span><span class="key left">←</span><span class="key right">→</span> like normal.</li>
             <li class="micro">Default setting is 1px.</li>
           </ul>
           <h2 class="usage__title">Push.</h2>
           <ul class="usage__hotkey-list">
-            <li>Use shift +↑↓←→ like normal.</li>
+            <li>Use <span class="key shift">shift</span>+ <span class="key up">↑</span><span class="key down">↓</span><span class="key left">←</span><span class="key right">→</span> like normal.</li>
             <li class="micro">Default setting is 10px.</li>
           </ul>
           <h2 class="usage__title">Shove.</h2>
           <ul class="usage__hotkey-list">
             <li>Use <a href="http://sketchrunner.com" class="usage__link">Sketch Runner</a> and type <strong>Shove -Direction-</strong>.</li>
             <li class="divider">- or -</li>
-            <li>Use alt +shift +↑↓←→.</li>
+            <li>Use <span class="key option">option</span>+ <span class="key shift">shift</span>+ <span class="key up">↑</span><span class="key down">↓</span><span class="key left">←</span><span class="key right">→</span>.</li>
             <li class="micro">Default setting is 15px.</li>
           </ul>
         </div>
@@ -144,5 +144,7 @@
 
         <p class="footer__text">© 2017 Michael Fouquet</p>
       </footer>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="js/main.js"></script>
   </body>
 </html>
