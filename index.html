@@ -10,97 +10,139 @@
   <body>
     <div class="page-wrap">
 
-      <header class="dark-bg header">
-        <h1>Nudge, Push, Shove.</h1>
-        <h4><span>Another</span> <span>Sketch</span> <span>Plugin</span></h4>
-        <div class="divider"></div>
-        <h4 class="light">Easily customize the small and big nudge settings right within Sketch.</h4>
-        <h5>(Oh, and get access to an even bigger nudge setting to boot!)</h5>
-        <div class="divider"></div>
-        <div class="action-group">
-          <button>Install Plugin</button>
-          <div class="link-row">
-            <a href="#">Try it out</a>
-            <div class="link-divider"></div>
-            <a href="#">How do I use it?</a>
-          </div>
+
+      <header id="header" class="header">
+        <h1 class="header__title">Nudge, Push, Shove.</h1>
+        <h4 class="header__subtitle">
+          <span>Another</span>
+          <span>
+            <svg viewBox="78 0 24 22" class="header__subtitle-icon">
+                <defs></defs>
+                <g id="sketch-symbol" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(78.000000, 0.000000)">
+                    <g id="Group" fill-rule="nonzero">
+                        <polygon id="Shape" fill="#FDB300" points="5.22580648 0.713354847 11.9758065 0 18.7258065 0.713354847 23.9516129 7.72599569 11.9758065 21.6666421 0 7.72599569"></polygon>
+                        <g transform="translate(0.000000, 7.725996)" id="Shape">
+                            <polygon fill="#EA6C00" points="4.85080203 0 11.9758173 13.940651 0 0"></polygon>
+                            <polygon fill="#EA6C00" transform="translate(17.963693, 6.970325) scale(-1, 1) translate(-17.963693, -6.970325) " points="16.8265869 0 23.9516021 13.940651 11.9757849 0"></polygon>
+                            <polygon fill="#FDAD00" points="4.85080203 0 19.1008325 0 11.9758173 13.940651"></polygon>
+                        </g>
+                        <g id="Shape">
+                            <polygon fill="#FDD231" points="11.9758173 0 5.2257868 0.713345415 4.85080203 7.72599058"></polygon>
+                            <polygon fill="#FDD231" transform="translate(15.538288, 3.862995) scale(-1, 1) translate(-15.538288, -3.862995) " points="19.1007957 0 12.3507652 0.713345415 11.9757805 7.72599058"></polygon>
+                            <polygon fill="#FDAD00" transform="translate(21.338709, 4.219668) scale(-1, 1) translate(-21.338709, -4.219668) " points="18.7257849 7.72599058 23.9516326 0.713345415 23.5765869 7.72599058"></polygon>
+                            <polygon fill="#FDAD00" points="0 7.72599058 5.2257868 0.713345415 4.85080203 7.72599058"></polygon>
+                            <polygon fill="#FEEEB7" points="11.9758173 0 4.85080203 7.72599058 19.1008325 7.72599058"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </span>
+          <span>Plugin</span>
+        </h4>
+        <div class="header__divider"></div>
+        <h4 class="header__tagline">Easily customize the small and big nudge settings right within Sketch.</h4>
+        <h5 class="header__sub-tagline">(Oh, and get access to an even bigger nudge setting to boot.)</h5>
+        <div class="header__divider"></div>
+        <a class="header__install-button" href="#installation">Install Plugin</a>
+        <div class="header__link-row">
+          <a class="header__link" href="#tryItOut">Try it out</a>
+          <div class="header__link-divider"></div>
+          <a class="header__link" href="#usage">How do I use it?</a>
         </div>
       </header>
-      <section class="two-col">
-        <div class="half light-bg">
-          <h2>Type in your settings.</h2>
-          <div class="settings-panel">
-            <div class="settings-panel__row">
-              <h2>Nudge</h2>
-              <input type="text" />
+
+
+      <section id="tryItOut" class="try">
+        <div class="try__settings-container">
+          <h2 class="try__title">Type in your settings.</h2>
+          <div class="try__settings">
+            <div class="try__settings-row">
+              <h2 class="try__settings-title">Nudge</h2>
+              <input class="try__settings-input" type="number" min=1 max=999 />
             </div>
-            <div class="settings-panel__row">
-              <h2>Push</h2>
-              <input type="text" />
+            <div class="try__settings-divider"></div>
+            <div class="try__settings-row">
+              <h2 class="try__settings-title">Push</h2>
+              <input class="try__settings-input" type="number" min=1 max=999 />
             </div>
-            <div class="settings-panel__row">
-              <h2>Shove</h2>
-              <input type="text" />
+            <div class="try__settings-divider"></div>
+            <div class="try__settings-row">
+              <h2 class="try__settings-title">Shove</h2>
+              <input class="try__settings-input" type="number" min=1 max=999 />
             </div>
           </div>
         </div>
-        <div class="half white-bg">
-          <h2>Use the shortcuts to move these guys around.</h2>
+        <div class="try__emoji-container">
+          <h2 class="try__title">Use the shortcuts to move these guys around.</h2>
           <div class="emoji">🤖</div>
           <div class="emoji">👽</div>
           <div class="emoji">💩</div>
         </div>
       </section>
-      <section class="dark-bg">
-        <h2 class="light">Let's get this party started.</h2>
-        <div class="divider"></div>
-        <h3>Recommended</h3>
-        <p class="light">Install via <a href="http://sketchrunner.com">Sketch Runner</a>, <a href="https://sketchpacks.com">Sketchpacks</a>, or <a href="http://sketchtoolbox.com">Sketch Toolbox</a> by searching for Nudge, Push, Shove.</p>
-        <div class="divider"></div>
-        <h3>Old-Fashioned</h3>
-        <p class="light">Download <a href="https://github.com/mfouquet/NudgePushShove/archive/master.zip">this file</a> and double click to install.</p>
+
+
+      <section id="installation" class="install">
+        <h2 class="install__title">Let's get this party started.</h2>
+        <div class="install__divider"></div>
+
+        <h3 class="install__subtitle">Recommended</h3>
+        <p class="install__text">Install via <a href="http://sketchrunner.com" class="install__link">Sketch Runner</a>, <a href="https://sketchpacks.com" class="install__link">Sketchpacks</a>, or <a href="http://sketchtoolbox.com" class="install__link">Sketch Toolbox</a> by searching for Nudge, Push, Shove.</p>
+        <div class="install__divider"></div>
+
+        <h3 class="install__subtitle">Old-Fashioned</h3>
+        <p class="install__text">Download <a href="https://github.com/mfouquet/NudgePushShove/archive/master.zip" class="install__link">this file</a> and double click to install.</p>
       </section>
-      <section class="two-col">
-        <div class="half white-bg">
-          <h2>Adjust your nudge settings.</h2>
-          <ul>
-            <li>Use <a href="http://sketchrunner.com">Sketch Runner</a> and type Adjust Nudge Settings or start typing nudge, push, or shove to select from the predefined 16px grid options.</li>
-            <li>Navigate to Plugins > Nudge, Push, Shove. > Adjust Nudge Settings. You'll also see a list of predefined 16px grid options here in this same menu as well.</li>
+
+
+      <section id="usage" class="usage">
+        <div class="usage__adjust-container">
+          <h2 class="usage__title">Adjust your nudge settings.</h2>
+          <ul class="usage__adjust-list">
+            <li>Use <a href="http://sketchrunner.com" class="usage__link">Sketch Runner</a> and type <strong>Adjust Nudge Settings</strong> or start typing <strong>nudge</strong>, <strong>push</strong>, or <strong>shove</strong> to select from the predefined 16px grid options.</li>
+            <li class="divider">- or -</li>
+            <li>Navigate to <strong>Plugins</strong> > <strong>Nudge, Push, Shove.</strong> > <strong>Adjust Nudge Settings</strong>. You'll also see a list of predefined 16px grid options here in this same menu as well.</li>
+            <li class="divider">- or -</li>
             <li>Hit ctrl +cmd +n on your keyboard.</li>
           </ul>
 
         </div>
-        <div class="half light-bg">
-          <h2>Nudge.</h2>
-          <div>Use ↑↓←→ like normal.
-
-Default setting is 1px.</div>
-          <h2>Push.</h2>
-          <div>Use shift +↑↓←→ like normal.
-
-Default setting is 10px.</div>
-          <h2>Shove.</h2>
-          <div>Use <a href="http://sketchrunner.com">Sketch Runner</a> and type Shove -Direction-.
-
-Use alt +shift +↑↓←→.
-
-Default setting is 15px.</div>
+        <div class="usage__hotkey-container">
+          <h2 class="usage__title">Nudge.</h2>
+          <ul class="usage__hotkey-list">
+            <li>Use ↑↓←→ like normal.</li>
+            <li class="micro">Default setting is 1px.</li>
+          </ul>
+          <h2 class="usage__title">Push.</h2>
+          <ul class="usage__hotkey-list">
+            <li>Use shift +↑↓←→ like normal.</li>
+            <li class="micro">Default setting is 10px.</li>
+          </ul>
+          <h2 class="usage__title">Shove.</h2>
+          <ul class="usage__hotkey-list">
+            <li>Use <a href="http://sketchrunner.com" class="usage__link">Sketch Runner</a> and type <strong>Shove -Direction-</strong>.</li>
+            <li class="divider">- or -</li>
+            <li>Use alt +shift +↑↓←→.</li>
+            <li class="micro">Default setting is 15px.</li>
+          </ul>
         </div>
       </section>
-      <footer class="dark-bg">
-        <div class="image-row">
+
+
+      <footer id="footer" class="footer">
+        <div class="footer__integrations">
           <a href="http://bit.ly/SketchRunnerWebsite">
-                <img src="http://bit.ly/RunnerBadgeBlue">
-              </a>
+            <img width="160" height="41" src="http://bit.ly/RunnerBadgeBlue" />
+          </a>
           <a href="https://sketchpacks.com/YOUR_NAME/PLUGIN_NAME/install">
-  <img width="160" height="41" src="http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png" >
-</a></div>
-        <div class="divider"></div>
-        <p class="light small">Made approximately halfway between the 🌖 and the 🌍 by <a href="https://twitter.com/_fookay">@_fookay</a>.</p>
+            <img width="160" height="41" src="http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png" />
+          </a>
+        </div>
+        <div class="footer__divider"></div>
+        <p class="footer__text">Made approximately halfway between the 🌖 and the 🌍 by <a href="https://twitter.com/_fookay" class="footer__link">@_fookay</a>.</p>
 
-        <p class="light small">Problems and suggestions go in the <a href="https://github.com/mfouquet/nudgepushshove">GitHub repo</a>.</p>
+        <p class="footer__text">Problems and suggestions go in the <a href="https://github.com/mfouquet/nudgepushshove" class="footer__link">GitHub repo</a>.</p>
 
-        <p class="light small">© 2017 Michael Fouquet</p>
+        <p class="footer__text">© 2017 Michael Fouquet</p>
       </footer>
   </body>
 </html>
