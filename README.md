@@ -12,6 +12,14 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 #### Recommended
 * Install via [Sketch Runner](http://sketchrunner.com/), [Sketchpacks](https://sketchpacks.com/), or [Sketch Toolbox](http://sketchtoolbox.com/) by searching for Nudge, Push, Shove.
 
+<a href="http://bit.ly/SketchRunnerWebsite">
+  <img width="160" height="41" src="http://bit.ly/RunnerBadgeBlue">
+</a>
+
+<a href="https://sketchpacks.com/mfouquet/nudgepushshove/install">
+  <img width="160" height="41" src="http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png" >
+</a>
+
 #### Old-Fashioned
 * Download [this file](https://github.com/mfouquet/NudgePushShove/archive/master.zip) and double click to install.
 
