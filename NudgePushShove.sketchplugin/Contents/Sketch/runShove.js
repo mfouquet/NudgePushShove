@@ -1,4 +1,5 @@
 @import 'utils/json.js';
+@import 'utils/threading.js';
 
 var shoveUp = function(context) {
   shoveObjects(context, 'up');
@@ -44,10 +45,6 @@ function shoveObjects(context, direction) {
 
 function getShoveAmount(context) {
   var shoveAmount;
-
-  var mainThreadDict = NSThread.mainThread().threadDictionary();
-  var kPluginDomain = "com.mfouquet.sketch.nudgePushShove";
-  var kShoveAmount = kPluginDomain + ".shoveAmount"
 
   if (!mainThreadDict[kShoveAmount]) {
     const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();

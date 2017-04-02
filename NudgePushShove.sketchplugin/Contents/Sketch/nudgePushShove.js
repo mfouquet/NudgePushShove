@@ -1,5 +1,6 @@
 @import 'utils/nibui.js';
 @import 'utils/json.js';
+@import 'utils/threading.js';
 
 var COSCRIPT;
 var app;
@@ -70,7 +71,7 @@ var onRun = function(context) {
   // Attach an action to the Website Button
   nibui.attachTargetAndAction(nibui.btnWebsite, function() {
     NSWorkspace.sharedWorkspace()
-      .openURL(NSURL.URLWithString("https://mfouquet.github.io/NudgePushShove/"));
+      .openURL(NSURL.URLWithString("http://www.nudgepushshove.com/"));
   });
 
 
@@ -78,7 +79,7 @@ var onRun = function(context) {
   // Attach an action to the Help Button
   nibui.attachTargetAndAction(nibui.btnHelp, function() {
     NSWorkspace.sharedWorkspace()
-      .openURL(NSURL.URLWithString("https://mfouquet.github.io/NudgePushShove/help.html"));
+      .openURL(NSURL.URLWithString("http://www.nudgepushshove.com/#usage"));
   });
 
 
@@ -122,6 +123,8 @@ function updateNudgeDistance(context, nibui, reset) {
     push: reset ? "10" : nibui.textCustomPush.stringValue(),
     shove: reset ? "15" : nibui.textCustomShove.stringValue()
   };
+
+  mainThreadDict[kShoveAmount] = settingsObj.shove;
 
   updateSketchNudgeSettings(context, settingsObj);
   saveJsonToFile(context, settingsObj);
