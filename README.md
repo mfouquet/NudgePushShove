@@ -30,7 +30,7 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 
 #### Shove
 * Use [Sketch Runner](http://sketchrunner.com/) and type `Shove -Direction-`.
-* Use <kbd>alt</kbd> +<kbd>shift</kbd> +<kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>.
+* Use <kbd>option</kbd> +<kbd>shift</kbd> +<kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>.
 * Default setting is 15px.
 
 
