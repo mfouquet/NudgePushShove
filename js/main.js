@@ -8,32 +8,51 @@ $(document).ready(function() {
 
     if (e.which === 38 && e.altKey && e.shiftKey) {
       $('#poo').css({top: '-=' + shove + 'px'});
-      var number = Math.floor(Math.random() * pooQuotes.length);
-      $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * pooQuotes.length);
+        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
 
     if (e.which === 40 && e.altKey && e.shiftKey) {
       $('#poo').css({top: '+=' + shove + 'px'});
-      var number = Math.floor(Math.random() * pooQuotes.length);
-      $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * pooQuotes.length);
+        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
 
     if (e.which === 37 && e.altKey && e.shiftKey) {
       $('#poo').css({left: '-=' + shove + 'px'});
-      var number = Math.floor(Math.random() * pooQuotes.length);
-      $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * pooQuotes.length);
+        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
 
     if (e.which === 39 && e.altKey && e.shiftKey) {
       $('#poo').css({left: '+=' + shove + 'px'});
-      var number = Math.floor(Math.random() * pooQuotes.length);
-      $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * pooQuotes.length);
+        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
@@ -41,32 +60,52 @@ $(document).ready(function() {
 
     if (e.which === 38 && e.shiftKey) {
       $('#alien').css({top: '-=' + push + 'px'});
-      var number = Math.floor(Math.random() * alienQuotes.length);
-      $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * alienQuotes.length);
+        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
 
     if (e.which === 40 && e.shiftKey) {
       $('#alien').css({top: '+=' + push + 'px'});
-      var number = Math.floor(Math.random() * alienQuotes.length);
-      $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * alienQuotes.length);
+        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
 
     if (e.which === 37 && e.shiftKey) {
       $('#alien').css({left: '-=' + push + 'px'});
-      var number = Math.floor(Math.random() * alienQuotes.length);
-      $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * alienQuotes.length);
+        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
 
     if (e.which === 39 && e.shiftKey) {
       $('#alien').css({left: '+=' + push + 'px'});
-      var number = Math.floor(Math.random() * alienQuotes.length);
-      $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * alienQuotes.length);
+        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
+        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       e.preventDefault();
       return;
     }
@@ -75,29 +114,49 @@ $(document).ready(function() {
       case 38: // up
       $('.up').addClass('pressed');
       $('#robot').css({top: '-=' + nudge + 'px'});
-      var number = Math.floor(Math.random() * robotQuotes.length);
-      $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * robotQuotes.length);
+        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       break;
 
       case 40: // down
       $('.down').addClass('pressed');
       $('#robot').css({top: '+=' + nudge + 'px'});
-      var number = Math.floor(Math.random() * robotQuotes.length);
-      $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * robotQuotes.length);
+        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       break;
 
       case 37: // left
       $('.left').addClass('pressed');
       $('#robot').css({left: '-=' + nudge + 'px'});
-      var number = Math.floor(Math.random() * robotQuotes.length);
-      $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * robotQuotes.length);
+        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       break;
 
       case 39: // right
       $('.right').addClass('pressed');
       $('#robot').css({left: '+=' + nudge + 'px'});
-      var number = Math.floor(Math.random() * robotQuotes.length);
-      $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+
+      setTimeout(function(){
+        var number = Math.floor(Math.random() * robotQuotes.length);
+        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
+        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+      }, 200);
       break;
 
       case 78: // n

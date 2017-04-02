@@ -13,7 +13,10 @@ var robotQuotes = [
   "Do you think BMW Autobots are assholes, too?",
   "If only I was born a cylon.",
   "I'm sorry, Dave. I'm afraid I can't do that because I'm just an emoji.",
-  "I've also seen things you people wouldn't believe, but you don't see me bragging."
+  "I've also seen things you people wouldn't believe, but you don't see me bragging.",
+  "This could take a while at this rate.",
+  "I could go faster if I had some jump jets. Put in a request.",
+  "Put your helmet on. We'll be reaching speeds of 3!"
 ];
 
 var alienQuotes = [
@@ -30,7 +33,13 @@ var alienQuotes = [
   "Real dick move at the end of The Mist. Sorry about that one.",
   "David Bowie. 'Nuff said.",
   "I'm going to rip your flag off the moon so you guys have to go back and plant another one.",
-  "We only abduct in rural places because of the pies in the windows."
+  "We only abduct in rural places because of the pies in the windows.",
+  "Just keep me away from the robot - we all know how the Geth and Quarian thing worked out.",
+  "If you start singing the Matchbox 20 song, I'll quit.",
+  "Ah, push it. Oh, baby, baby. Baby, baby. Wait, how long have you been there?",
+  "When push comes to shove, you really should be using the poo guy.",
+  "The Jeff Goldblum hack is totally my fault. I hadn't run updates in a while.",
+  "I can cover some pretty good medium-sized distances. Oh and I have a ray gun."
 ];
 
 var pooQuotes = [
@@ -46,5 +55,11 @@ var pooQuotes = [
   "Even I draw the line at the bathroom in Trainspotting.",
   "Sorry about the monopoly I have on the color brown.",
   "I'm an artist and diapers are my canvas.",
-  "Replace 'you' with 'poo' in all of your favorite songs. Do it."
+  "Replace 'you' with 'poo' in all of your favorite songs. Do it.",
+  "MORE! I won't smear, promise.",
+  "Use me when you really need to move something way the heck over there.",
+  "I'm here to tell you: the guy in the elevator didn't -just- fart...",
+  "I'm probably more well-traveled than you are just by going through the sewage system.",
+  "All this jumping around is making me sick.",
+  "I cover very large distances. Way more than the robot and alien, if you want."
 ];
