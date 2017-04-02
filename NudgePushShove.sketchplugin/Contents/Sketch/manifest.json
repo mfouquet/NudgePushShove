@@ -171,7 +171,7 @@
   },
   "identifier" : "com.mfouquet.sketch.nudgepushshove",
   "version" : "1.2.0",
-  "description" : "Change the big and small nudge settings for Sketch.",
+  "description" : "Change the big and small nudge settings for Sketch. Plus, get access to an even bigger nudge setting.",
   "author" : "Michael Fouquet",
   "authorEmail" : "michael.fouquet@me.com",
   "name" : "Nudge, Push, Shove"
