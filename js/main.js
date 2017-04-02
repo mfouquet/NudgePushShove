@@ -7,18 +7,21 @@ $(document).ready(function() {
     var shove = $('#settingsShove').val();
 
     if (e.which === 38 && e.altKey && e.shiftKey) {
-      $('#poo').css({top: '-=' + shove + 'px'});
-      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * pooQuotes.length);
-        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+      if ($('#poo').isOnScreen()) {
+        $('#poo').css({top: '-=' + shove + 'px'});
         $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
+        setTimeout(function(){
+          var number = Math.floor(Math.random() * pooQuotes.length);
+          $('#poo .try__emoji-bubble').html(pooQuotes[number]);
+          $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
+        }, 200);
+        e.preventDefault();
+        return;
+      }
     }
 
     if (e.which === 40 && e.altKey && e.shiftKey) {
+      if ($('#poo').isOnScreen()) {
       $('#poo').css({top: '+=' + shove + 'px'});
       $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -30,8 +33,10 @@ $(document).ready(function() {
       e.preventDefault();
       return;
     }
+    }
 
     if (e.which === 37 && e.altKey && e.shiftKey) {
+            if ($('#poo').isOnScreen()) {
       $('#poo').css({left: '-=' + shove + 'px'});
       $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -43,8 +48,10 @@ $(document).ready(function() {
       e.preventDefault();
       return;
     }
+    }
 
     if (e.which === 39 && e.altKey && e.shiftKey) {
+            if ($('#poo').isOnScreen()) {
       $('#poo').css({left: '+=' + shove + 'px'});
       $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -56,9 +63,11 @@ $(document).ready(function() {
       e.preventDefault();
       return;
     }
+    }
 
 
     if (e.which === 38 && e.shiftKey) {
+            if ($('#alien').isOnScreen()) {
       $('#alien').css({top: '-=' + push + 'px'});
       $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -70,8 +79,10 @@ $(document).ready(function() {
       e.preventDefault();
       return;
     }
+    }
 
     if (e.which === 40 && e.shiftKey) {
+            if ($('#alien').isOnScreen()) {
       $('#alien').css({top: '+=' + push + 'px'});
       $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -83,8 +94,10 @@ $(document).ready(function() {
       e.preventDefault();
       return;
     }
+    }
 
     if (e.which === 37 && e.shiftKey) {
+            if ($('#alien').isOnScreen()) {
       $('#alien').css({left: '-=' + push + 'px'});
       $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -96,8 +109,10 @@ $(document).ready(function() {
       e.preventDefault();
       return;
     }
+    }
 
     if (e.which === 39 && e.shiftKey) {
+            if ($('#alien').isOnScreen()) {
       $('#alien').css({left: '+=' + push + 'px'});
       $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -109,10 +124,12 @@ $(document).ready(function() {
       e.preventDefault();
       return;
     }
+    }
 
     switch(e.which) {
       case 38: // up
       $('.up').addClass('pressed');
+            if ($('#robot').isOnScreen()) {
       $('#robot').css({top: '-=' + nudge + 'px'});
       $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -121,10 +138,12 @@ $(document).ready(function() {
         $('#robot .try__emoji-bubble').html(robotQuotes[number]);
         $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
       }, 200);
+    }
       break;
 
       case 40: // down
       $('.down').addClass('pressed');
+            if ($('#robot').isOnScreen()) {
       $('#robot').css({top: '+=' + nudge + 'px'});
       $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -133,10 +152,12 @@ $(document).ready(function() {
         $('#robot .try__emoji-bubble').html(robotQuotes[number]);
         $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
       }, 200);
+    }
       break;
 
       case 37: // left
       $('.left').addClass('pressed');
+            if ($('#robot').isOnScreen()) {
       $('#robot').css({left: '-=' + nudge + 'px'});
       $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -145,10 +166,12 @@ $(document).ready(function() {
         $('#robot .try__emoji-bubble').html(robotQuotes[number]);
         $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
       }, 200);
+    }
       break;
 
       case 39: // right
       $('.right').addClass('pressed');
+            if ($('#robot').isOnScreen()) {
       $('#robot').css({left: '+=' + nudge + 'px'});
       $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
 
@@ -157,6 +180,7 @@ $(document).ready(function() {
         $('#robot .try__emoji-bubble').html(robotQuotes[number]);
         $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
       }, 200);
+    }
       break;
 
       case 78: // n
@@ -227,3 +251,22 @@ $(document).ready(function() {
     }
   });
 });
+
+$.fn.isOnScreen = function(){
+
+	var win = $(window);
+
+	var viewport = {
+		top : win.scrollTop(),
+		left : win.scrollLeft()
+	};
+	viewport.right = viewport.left + win.width();
+	viewport.bottom = viewport.top + win.height();
+
+	var bounds = this.offset();
+    bounds.right = bounds.left + this.outerWidth();
+    bounds.bottom = bounds.top + this.outerHeight();
+
+    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+};
