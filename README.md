@@ -1,5 +1,7 @@
 # Nudge, Push, Shove.
 
+Rather than go through this readme, check out the [website](http://www.nudgepushshove.com/). It's way better.
+
 Changing the nudge settings in Sketch used to require a trip to the terminal. _Used to_. Now you can change those settings easily with this plugin. In addition, there's new hotkeys to make even bigger nudges if you need to.
 
 
