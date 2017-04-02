@@ -254,6 +254,7 @@ body {
     font-size: 4rem;
     position: absolute;
     left: 30%;
+    cursor: default;
   }
 
   .try__emoji-bubble {
@@ -303,23 +304,98 @@ body {
     transition: all 0.15s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   }
 
+  #robot {
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: red;
+      width: 4px;
+      height: 4px;
+      top: 25px;
+      left: 17px;
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      background-color: red;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      top: 25px;
+      left: 42px;
+      z-index: 1;
+      opacity: 0;
+    }
+
+    &:hover {
+      &:before,
+      &:after {
+        animation: 0.5s infinite alternate robotEyes;
+      }
+    }
+  }
+
+  @keyframes robotEyes {
+    from {
+      opacity: 0;
+      transform: scale(1);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
 
   #alien {
     top: 9rem;
+
+    &:hover {
+      animation: 1s infinite alternate alienHue;
+
+    }
+  }
+
+  @keyframes alienHue {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(180deg);
+    }
   }
 
   #poo {
     top: 18rem;
+
+    &:hover span {
+      animation: 1s infinite alternate pooRotate;
+    }
   }
 
+  @keyframes pooRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-25deg);
+    }
+    75% {
+      transform: rotate(25deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
 
 .install {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding: 4rem 1rem;
   background-color: $color-bg-dark;
   color: $color-text-light;
   text-align: center;
@@ -363,6 +439,7 @@ body {
 
 
 
+
 .usage {
   display: flex;
   color: $color-text-dark;
@@ -374,8 +451,7 @@ body {
 
   .usage__adjust-container {
     width: 50%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 4rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -387,8 +463,7 @@ body {
 
   .usage__hotkey-container {
     width: 50%;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 4rem 1rem;
     background-color: $color-bg-light;
     display: flex;
     flex-direction: column;
@@ -403,6 +478,7 @@ body {
     font-weight: 900;
     font-size: 2.25rem;
     margin-bottom: 2rem;
+    text-align: center;
   }
 
   .usage__adjust-list {

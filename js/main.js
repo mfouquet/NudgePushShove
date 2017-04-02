@@ -1,259 +1,167 @@
+const pooEmoji = $('#poo');
+const pooEmojiBubble = $('#poo .try__emoji-bubble');
+const alienEmoji = $('#alien');
+const alienEmojiBubble = $('#alien .try__emoji-bubble');
+const robotEmoji = $('#robot');
+const robotEmojiBubble = $('#robot .try__emoji-bubble');
+
 $(document).ready(function() {
+  // This makes it so the blinking cursor is after the 1
   $('#settingsNudge').focus().val('1');
 
   $(document).keydown(function(e) {
-    var nudge = $('#settingsNudge').val();
-    var push = $('#settingsPush').val();
-    var shove = $('#settingsShove').val();
-
-    if (e.which === 38 && e.altKey && e.shiftKey) {
-      if ($('#poo').isOnScreen()) {
-        $('#poo').css({top: '-=' + shove + 'px'});
-        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-        setTimeout(function(){
-          var number = Math.floor(Math.random() * pooQuotes.length);
-          $('#poo .try__emoji-bubble').html(pooQuotes[number]);
-          $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-        }, 200);
-        e.preventDefault();
-        return;
-      }
-    }
-
-    if (e.which === 40 && e.altKey && e.shiftKey) {
-      if ($('#poo').isOnScreen()) {
-      $('#poo').css({top: '+=' + shove + 'px'});
-      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * pooQuotes.length);
-        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
-        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
-    }
-    }
-
-    if (e.which === 37 && e.altKey && e.shiftKey) {
-            if ($('#poo').isOnScreen()) {
-      $('#poo').css({left: '-=' + shove + 'px'});
-      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * pooQuotes.length);
-        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
-        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
-    }
-    }
-
-    if (e.which === 39 && e.altKey && e.shiftKey) {
-            if ($('#poo').isOnScreen()) {
-      $('#poo').css({left: '+=' + shove + 'px'});
-      $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * pooQuotes.length);
-        $('#poo .try__emoji-bubble').html(pooQuotes[number]);
-        $('#poo .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
-    }
-    }
-
-
-    if (e.which === 38 && e.shiftKey) {
-            if ($('#alien').isOnScreen()) {
-      $('#alien').css({top: '-=' + push + 'px'});
-      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * alienQuotes.length);
-        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
-        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
-    }
-    }
-
-    if (e.which === 40 && e.shiftKey) {
-            if ($('#alien').isOnScreen()) {
-      $('#alien').css({top: '+=' + push + 'px'});
-      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * alienQuotes.length);
-        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
-        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
-    }
-    }
-
-    if (e.which === 37 && e.shiftKey) {
-            if ($('#alien').isOnScreen()) {
-      $('#alien').css({left: '-=' + push + 'px'});
-      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * alienQuotes.length);
-        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
-        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
-    }
-    }
-
-    if (e.which === 39 && e.shiftKey) {
-            if ($('#alien').isOnScreen()) {
-      $('#alien').css({left: '+=' + push + 'px'});
-      $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * alienQuotes.length);
-        $('#alien .try__emoji-bubble').html(alienQuotes[number]);
-        $('#alien .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-      e.preventDefault();
-      return;
-    }
-    }
-
-    switch(e.which) {
-      case 38: // up
-      $('.up').addClass('pressed');
-            if ($('#robot').isOnScreen()) {
-      $('#robot').css({top: '-=' + nudge + 'px'});
-      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * robotQuotes.length);
-        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
-        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-    }
-      break;
-
-      case 40: // down
-      $('.down').addClass('pressed');
-            if ($('#robot').isOnScreen()) {
-      $('#robot').css({top: '+=' + nudge + 'px'});
-      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * robotQuotes.length);
-        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
-        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-    }
-      break;
-
-      case 37: // left
-      $('.left').addClass('pressed');
-            if ($('#robot').isOnScreen()) {
-      $('#robot').css({left: '-=' + nudge + 'px'});
-      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * robotQuotes.length);
-        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
-        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-    }
-      break;
-
-      case 39: // right
-      $('.right').addClass('pressed');
-            if ($('#robot').isOnScreen()) {
-      $('#robot').css({left: '+=' + nudge + 'px'});
-      $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-
-      setTimeout(function(){
-        var number = Math.floor(Math.random() * robotQuotes.length);
-        $('#robot .try__emoji-bubble').html(robotQuotes[number]);
-        $('#robot .try__emoji-bubble').toggleClass('try__emoji-bubble--hidden');
-      }, 200);
-    }
-      break;
-
-      case 78: // n
-      $('.n').addClass('pressed');
-      break;
-
-      case 16: // shift
-      $('.shift').addClass('pressed');
-      break;
-
-      case 17: // ctrl
-      $('.ctrl').addClass('pressed');
-      break;
-
-      case 18: // option
-      $('.option').addClass('pressed');
-      break;
-
-      case 91: // cmd
-      $('.cmd').addClass('pressed');
-      break;
-
-      default: return; // exit this handler for other keys
-    }
-
-    e.preventDefault();
+    keyDown(e);
   });
 
   $(document).keyup(function(e) {
-    switch(e.which) {
-      case 38: // up
-      $('.up').removeClass('pressed');
-      break;
-
-      case 40: // down
-      $('.down').removeClass('pressed');
-      break;
-
-      case 37: // left
-      $('.left').removeClass('pressed');
-      break;
-
-      case 39: // right
-      $('.right').removeClass('pressed');
-      break;
-
-      case 78: // n
-      $('.n').removeClass('pressed');
-      break;
-
-      case 16: // shift
-      $('.shift').removeClass('pressed');
-      break;
-
-      case 17: // ctrl
-      $('.ctrl').removeClass('pressed');
-      break;
-
-      case 18: // option
-      $('.option').removeClass('pressed');
-      break;
-
-      case 91: // cmd
-      $('.cmd').removeClass('pressed');
-      break;
-
-      default: return; // exit this handler for other keys
-    }
+    keyUp(e);
   });
 });
 
-$.fn.isOnScreen = function(){
+function keyDown(e) {
+  switch(e.which) {
+    case 38: // up
+    $('.up').addClass('pressed');
+    handleEmoji(e, 'up');
+    break;
 
+    case 40: // down
+    $('.down').addClass('pressed');
+    handleEmoji(e, 'down');
+    break;
+
+    case 37: // left
+    $('.left').addClass('pressed');
+    handleEmoji(e, 'left');
+    break;
+
+    case 39: // right
+    $('.right').addClass('pressed');
+    handleEmoji(e, 'right');
+    break;
+
+    case 78: // n
+    $('.n').addClass('pressed');
+    break;
+
+    case 16: // shift
+    $('.shift').addClass('pressed');
+    break;
+
+    case 17: // ctrl
+    $('.ctrl').addClass('pressed');
+    break;
+
+    case 18: // option
+    $('.option').addClass('pressed');
+    break;
+
+    case 91: // cmd
+    $('.cmd').addClass('pressed');
+    break;
+  }
+}
+
+
+function keyUp(e) {
+  switch(e.which) {
+    case 38: // up
+    $('.up').removeClass('pressed');
+    break;
+
+    case 40: // down
+    $('.down').removeClass('pressed');
+    break;
+
+    case 37: // left
+    $('.left').removeClass('pressed');
+    break;
+
+    case 39: // right
+    $('.right').removeClass('pressed');
+    break;
+
+    case 78: // n
+    $('.n').removeClass('pressed');
+    break;
+
+    case 16: // shift
+    $('.shift').removeClass('pressed');
+    break;
+
+    case 17: // ctrl
+    $('.ctrl').removeClass('pressed');
+    break;
+
+    case 18: // option
+    $('.option').removeClass('pressed');
+    break;
+
+    case 91: // cmd
+    $('.cmd').removeClass('pressed');
+    break;
+  }
+}
+
+
+function handleEmoji(e, direction) {
+  e.preventDefault();
+
+  var emoji;
+  var emojiBubble;
+  var quotesObject;
+  var amount;
+
+  if (e.altKey && e.shiftKey) {
+    emoji = pooEmoji;
+    emojiBubble = pooEmojiBubble;
+    quotesObject = pooQuotes;
+    amount = $('#settingsShove').val();
+  } else if (e.shiftKey) {
+    emoji = alienEmoji;
+    emojiBubble = alienEmojiBubble;
+    quotesObject = alienQuotes;
+    amount = $('#settingsPush').val();
+  } else {
+    emoji = robotEmoji;
+    emojiBubble = robotEmojiBubble;
+    quotesObject = robotQuotes;
+    amount = $('#settingsNudge').val();
+  }
+
+  if (emoji.isOnScreen()) {
+    moveEmoji(emoji, direction, amount);
+    animateEmojiBubble(emojiBubble, quotesObject);
+    return;
+  }
+}
+
+
+function moveEmoji(emoji, direction, amount) {
+  if (direction === 'up') {
+    emoji.css({top: '-=' + amount + 'px'});
+  } else if (direction === 'down') {
+    emoji.css({top: '+=' + amount + 'px'});
+  } else if (direction === 'left') {
+    emoji.css({left: '-=' + amount + 'px'});
+  } else if (direction === 'right') {
+    emoji.css({left: '+=' + amount + 'px'});
+  }
+}
+
+
+function animateEmojiBubble(emojiBubble, quotesObject) {
+  emojiBubble.toggleClass('try__emoji-bubble--hidden');
+  setTimeout(function(){
+    var number = Math.floor(Math.random() * quotesObject.length);
+    emojiBubble.html(quotesObject[number]);
+    emojiBubble.toggleClass('try__emoji-bubble--hidden');
+  }, 200);
+}
+
+
+// Snagged from: http://upshots.org/javascript/jquery-test-if-element-is-in-viewport-visible-on-screen
+$.fn.isOnScreen = function(){
 	var win = $(window);
 
 	var viewport = {
@@ -264,9 +172,9 @@ $.fn.isOnScreen = function(){
 	viewport.bottom = viewport.top + win.height();
 
 	var bounds = this.offset();
-    bounds.right = bounds.left + this.outerWidth();
-    bounds.bottom = bounds.top + this.outerHeight();
+  bounds.right = bounds.left + this.outerWidth();
+  bounds.bottom = bounds.top + this.outerHeight();
 
-    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+  return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
 
 };
