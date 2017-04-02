@@ -6,8 +6,7 @@ const robotEmoji = $('#robot');
 const robotEmojiBubble = $('#robot .try__emoji-bubble');
 
 $(document).ready(function() {
-  // This makes it so the blinking cursor is after the 1
-  $('#settingsNudge').focus().val('1');
+  document.getElementById('settingsNudge').select();
 
   $(document).keydown(function(e) {
     keyDown(e);
