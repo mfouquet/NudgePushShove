@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.2.1
+- Fix the manifest.json file.
+
 ## 1.2.0
 - UI overhaul.
 - Streamlined the preset 16px grid options.
