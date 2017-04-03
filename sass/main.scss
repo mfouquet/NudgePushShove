@@ -253,7 +253,8 @@ body {
     justify-content: center;
     font-size: 4rem;
     position: absolute;
-    left: 30%;
+    left: 50%;
+    transform: translateX(-50%);
     cursor: default;
   }
 
