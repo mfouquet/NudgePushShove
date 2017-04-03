@@ -429,6 +429,12 @@ body {
     font-weight: 300;
   }
 
+  .install__help-text {
+    color: lighten(#FFDE4C, 30%);//$color-text-lighter;
+    padding-top: 3rem;
+    font-size: 0.75rem;
+  }
+
   .install__link {
     color: $color-text-light;
     transition: color 0.25s;
