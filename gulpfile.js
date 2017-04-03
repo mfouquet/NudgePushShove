@@ -15,7 +15,7 @@ gulp.task('sass', function () {
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(cleanCSS())
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('sass:watch', function () {
