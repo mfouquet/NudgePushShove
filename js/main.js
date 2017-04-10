@@ -112,20 +112,23 @@ function handleEmoji(e, direction) {
   var amount;
 
   if (e.altKey && e.shiftKey) {
+    var amountVal = $('#settingsShove').val();
     emoji = pooEmoji;
     emojiBubble = pooEmojiBubble;
-    quotesObject = pooQuotes;
-    amount = $('#settingsShove').val();
+    quotesObject = amountVal > 0 ? pooQuotes : emptyQuotes;
+    amount = amountVal;
   } else if (e.shiftKey) {
+    var amountVal = $('#settingsPush').val();
     emoji = alienEmoji;
     emojiBubble = alienEmojiBubble;
-    quotesObject = alienQuotes;
-    amount = $('#settingsPush').val();
+    quotesObject = amountVal > 0 ? alienQuotes : emptyQuotes;
+    amount = amountVal;
   } else {
+    var amountVal = $('#settingsNudge').val();
     emoji = robotEmoji;
     emojiBubble = robotEmojiBubble;
-    quotesObject = robotQuotes;
-    amount = $('#settingsNudge').val();
+    quotesObject = amountVal > 0 ? robotQuotes : emptyQuotes;
+    amount = amountVal;
   }
 
   if (emoji.isOnScreen()) {

@@ -63,3 +63,10 @@ var pooQuotes = [
   "All this jumping around is making me sick.",
   "I cover very large distances. Way more than the robot and alien, if you want."
 ];
+
+var emptyQuotes = [
+  "Hey! I can't move without a number entered.",
+  "You need to enter a number in the boxes on the left.",
+  "Do you expect me to move without a number?",
+  "I can't move zero places over. Enter a number!"
+];
