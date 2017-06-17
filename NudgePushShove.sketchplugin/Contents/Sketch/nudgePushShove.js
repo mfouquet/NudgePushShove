@@ -37,7 +37,7 @@ var onRun = function(context) {
     'mainWindow',
     'textCustomNudge', 'textCustomPush', 'textCustomShove',
     'btnWebsite', 'btnHelp', 'btnVersion',
-    'btnSave', 'btnReset'
+    'checkHotkey', 'btnSave', 'btnReset'
   ]);
 
 
@@ -65,6 +65,7 @@ var onRun = function(context) {
   nibui.textCustomNudge.setStringValue(settingsFile.nudge);
   nibui.textCustomPush.setStringValue(settingsFile.push);
   nibui.textCustomShove.setStringValue(settingsFile.shove);
+  nibui.checkHotkey.setState(settingsFile.hotkeyCheck == 'command' ? NSOnState : NSOffState);
 
 
   // ====
@@ -118,16 +119,35 @@ var onRun = function(context) {
 
 
 function updateNudgeDistance(context, nibui, reset) {
+  const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
+  const manifestObj = jsonFromFile(scriptPath + '/manifest.json', true);
+  const hotkeyModifier = nibui.checkHotkey.state() == true ? 'command' : 'option';
+
+  for (i = 0; i < manifestObj.commands.length; i++) {
+    if (manifestObj.commands[i].name == 'Up') {
+      manifestObj.commands[i].shortcut = hotkeyModifier + ' shift ↑';
+    } else if (manifestObj.commands[i].name == 'Down') {
+      manifestObj.commands[i].shortcut = hotkeyModifier + ' shift ↓';
+    } else if (manifestObj.commands[i].name == 'Left') {
+      manifestObj.commands[i].shortcut = hotkeyModifier + ' shift ←';
+    } else if (manifestObj.commands[i].name == 'Right') {
+      manifestObj.commands[i].shortcut = hotkeyModifier + ' shift →';
+    }
+  }
+
+  saveJsonToFile(context, manifestObj, '/manifest.json');
+
   const settingsObj = {
     nudge: reset ? "1" : nibui.textCustomNudge.stringValue(),
     push: reset ? "10" : nibui.textCustomPush.stringValue(),
-    shove: reset ? "15" : nibui.textCustomShove.stringValue()
+    shove: reset ? "15" : nibui.textCustomShove.stringValue(),
+    hotkeyCheck: nibui.checkHotkey.state() == true ? 'command' : 'option'
   };
 
   mainThreadDict[kShoveAmount] = settingsObj.shove;
 
   updateSketchNudgeSettings(context, settingsObj);
-  saveJsonToFile(context, settingsObj);
+  saveJsonToFile(context, settingsObj, '/utils/settings.js');
 }
 
 

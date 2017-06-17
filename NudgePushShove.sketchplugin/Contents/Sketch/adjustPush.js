@@ -25,5 +25,5 @@ function savePushAmount(context, amount) {
 
   settingsObj.push = amount;
 
-  saveJsonToFile(context, settingsObj);
+  saveJsonToFile(context, settingsObj, '/utils/settings.js');
 }
