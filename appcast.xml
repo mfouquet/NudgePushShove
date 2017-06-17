@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Nudge, Push, Shove</title>
+    <link>https://raw.githubusercontent.com/mfouquet/NudgePushShove/master/appcast.xml</link>
+    <description>Easily customize the small and big nudge settings right within Sketch and get access to an even bigger nudge setting to boot.</description>
+    <language>en</language>
+      <item>
+        <title>Version 1.3.0</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Add ability to change Shove hotkey.</li>
+            </ul>
+          ]]>
+        </description>
+        <pubDate>Sat, 17 Jun 2017 12:58:00 +0000</pubDate>
+        <enclosure url="https://github.com/mfouquet/NudgePushShove/archive/v1.3.0.zip" sparkle:version="1.4" type="application/octet-stream" />
+      </item>
+      <item>
+        <title>Version 1.2.1</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Fix the manifest.json file.</li>
+            </ul>
+          ]]>
+        </description>
+        <pubDate>Fri, 5 May 2017 12:58:00 +0000</pubDate>
+        <enclosure url="https://github.com/mfouquet/NudgePushShove/archive/v1.2.1.zip" sparkle:version="1.3" type="application/octet-stream" />
+      </item>
+      <item>
+        <title>Version 1.0.0</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Initial Release.</li>
+            </ul>
+          ]]>
+        </description>
+        <pubDate>Tue, 24 Jan 2017 12:58:00 +0000</pubDate>
+        <enclosure url="https://github.com/mfouquet/NudgePushShove/archive/v1.0.zip" sparkle:version="1.0" type="application/octet-stream" />
+      </item>
+  </channel>
+</rss>

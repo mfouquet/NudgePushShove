@@ -25,5 +25,5 @@ function saveNudgeAmount(context, amount) {
 
   settingsObj.nudge = amount;
 
-  saveJsonToFile(context, settingsObj);
+  saveJsonToFile(context, settingsObj, '/utils/settings.js');
 }

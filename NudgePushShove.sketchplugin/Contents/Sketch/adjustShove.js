@@ -25,5 +25,5 @@ function saveShoveAmount(context, amount) {
 
   settingsObj.shove = amount;
 
-  saveJsonToFile(context, settingsObj);
+  saveJsonToFile(context, settingsObj, '/utils/settings.js');
 }

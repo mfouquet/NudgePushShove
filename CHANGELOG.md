@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.0
+- Add ability to change Shove hotkey.
+
 ## 1.2.1
 - Fix the manifest.json file.
 

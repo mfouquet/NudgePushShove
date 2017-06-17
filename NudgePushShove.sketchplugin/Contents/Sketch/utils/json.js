@@ -1,8 +1,8 @@
-var saveJsonToFile = function(context, settings) {
+var saveJsonToFile = function(context, jsonObject, filePath) {
   var scriptPath = context.scriptPath;
   var scriptFolder = [scriptPath stringByDeletingLastPathComponent];
 
-  writeTextToFile(stringify(settings), scriptFolder + '/utils/settings.js');
+  writeTextToFile(stringify(jsonObject), scriptFolder + filePath);
 }
 
 var stringify = function(obj, prettyPrinted) {
