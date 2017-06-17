@@ -26,8 +26,8 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 
 ## Usage
 #### Adjust Nudge Settings
-* Use [Sketch Runner](http://sketchrunner.com/) and type `Adjust Nudge Settings` or start typing `nudge`, `push`, or `shove` to select from the predefined 16px grid options.
-* Navigate to `Plugins` > `Nudge, Push, Shove.` > `Adjust Nudge Settings`. You'll also see a list of predefined 16px grid options here in this same menu as well.
+* Use [Sketch Runner](http://sketchrunner.com/) and type `Change Nudge Settings` or start typing `nudge`, `push`, or `shove` to select from the predefined 16px grid options.
+* Navigate to `Plugins` > `Nudge, Push, Shove.` > `Change Nudge Settings`. You'll also see a list of predefined 16px grid options here in this same menu as well.
 * Hit <kbd>ctrl</kbd> +<kbd>cmd</kbd> +<kbd>n</kbd> on your keyboard.
 
 #### Nudge
@@ -40,7 +40,7 @@ Changing the nudge settings in Sketch used to require a trip to the terminal. _U
 
 #### Shove
 * Use [Sketch Runner](http://sketchrunner.com/) and type `Shove -Direction-`.
-* Use <kbd>option</kbd> +<kbd>shift</kbd> +<kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>.
+* Use <kbd>option</kbd> +<kbd>shift</kbd> +<kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>. Change the hotkey from <kbd>option</kbd> to <kbd>command</kbd> in the `Change Nudge Settings` menu.
 * Default setting is 15px.
 
 
