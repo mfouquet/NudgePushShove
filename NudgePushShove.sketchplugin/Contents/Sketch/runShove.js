@@ -29,6 +29,10 @@ function shoveObjects(context, direction) {
   selection.iterate(function(layer) {
     sketchLayer = layer.sketchObject;
 
+    if (sketchLayer.class() == "MSTextLayer" && sketchLayer.isEditingText()) {
+      return;
+    }
+
     if (direction === 'up') {
       sketchLayer.frame().setY(parseFloat(sketchLayer.frame().y()) - parseFloat(shoveAmount));
     } else if (direction === 'right') {
