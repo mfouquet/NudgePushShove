@@ -1,49 +1,93 @@
-# Nudge, Push, Shove.
+# NudgePushShove
 
-**Rather than go through this readme, check out the [website](http://www.nudgepushshove.com/). It's way better.**
-
-Changing the nudge settings in Sketch used to require a trip to the terminal. _Used to_. Now you can change those settings easily with this plugin. In addition, there's new hotkeys to make even bigger nudges if you need to.
-
-
-## Installation
-
-⚠️ - _If you were one of the 3 or 4 people that installed the previous version, be sure to uninstall it before trying to install this new version. Sorry!_
-
-#### Recommended
-* Install via [Sketch Runner](http://sketchrunner.com/), [Sketchpacks](https://sketchpacks.com/), or [Sketch Toolbox](http://sketchtoolbox.com/) by searching for Nudge, Push, Shove.
-
-<a href="http://bit.ly/SketchRunnerWebsite">
-  <img width="160" height="41" src="http://bit.ly/RunnerBadgeBlue">
-</a>
-
-<a href="https://sketchpacks.com/mfouquet/nudgepushshove/install">
-  <img width="160" height="41" src="http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png" >
-</a>
-
-#### Old-Fashioned
-* Download [this file](https://github.com/mfouquet/NudgePushShove/archive/master.zip) and double click to install.
-
+_This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
 
 ## Usage
-#### Adjust Nudge Settings
-* Use [Sketch Runner](http://sketchrunner.com/) and type `Change Nudge Settings` or start typing `nudge`, `push`, or `shove` to select from the predefined 16px grid options.
-* Navigate to `Plugins` > `Nudge, Push, Shove.` > `Change Nudge Settings`. You'll also see a list of predefined 16px grid options here in this same menu as well.
-* Hit <kbd>ctrl</kbd> +<kbd>cmd</kbd> +<kbd>n</kbd> on your keyboard.
 
-#### Nudge
-* Use <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> like normal.
-* Default setting is 1px.
+Install the dependencies
 
-#### Push
-* Use <kbd>shift</kbd> +<kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> like normal.
-* Default setting is 10px.
+```bash
+npm install
+```
 
-#### Shove
-* Use [Sketch Runner](http://sketchrunner.com/) and type `Shove -Direction-`.
-* Use <kbd>option</kbd> +<kbd>shift</kbd> +<kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>. Change the hotkey from <kbd>option</kbd> to <kbd>command</kbd> in the `Change Nudge Settings` menu.
-* Default setting is 15px.
+Once the installation is done, you can run some commands inside the project folder:
 
+```bash
+npm run build
+```
 
-## Problems?
+To watch for changes:
 
-[File an issue](https://github.com/mfouquet/NudgePushShove/issues) or send me a note on [Twitter](https://twitter.com/_fookay). Any and all feedback is welcome!
+```bash
+npm run watch
+```
+
+Additionally, if you wish to run the plugin every time it is built:
+
+```bash
+npm run start
+```
+
+## Custom Configuration
+
+### Babel
+
+To customize Babel, you have two options:
+
+* You may create a [`.babelrc`](https://babeljs.io/docs/usage/babelrc) file in your project's root directory. Any settings you define here will overwrite matching config-keys within skpm preset. For example, if you pass a "presets" object, it will replace & reset all Babel presets that skpm defaults to.
+
+* If you'd like to modify or add to the existing Babel config, you must use a `webpack.skpm.config.js` file. Visit the [Webpack](#webpack) section for more info.
+
+### Webpack
+
+To customize webpack create `webpack.skpm.config.js` file which exports function that will change webpack's config.
+
+```js
+/**
+ * Function that mutates original webpack config.
+ * Supports asynchronous changes when promise is returned.
+ *
+ * @param {object} config - original webpack config.
+ * @param {boolean} isPluginCommand - whether the config is for a plugin command or a resource
+ **/
+module.exports = function(config, isPluginCommand) {
+  /** you can change config here **/
+}
+```
+
+## Debugging
+
+To view the output of your `console.log`, you have a few different options:
+
+* Use the [`sketch-dev-tools`](https://github.com/skpm/sketch-dev-tools)
+* Open `Console.app` and look for the sketch logs
+* Look at the `~/Library/Logs/com.bohemiancoding.sketch3/Plugin Output.log` file
+
+Skpm provides a convenient way to do the latter:
+
+```bash
+skpm log
+```
+
+The `-f` option causes `skpm log` to not stop when the end of logs is reached, but rather to wait for additional data to be appended to the input
+
+## Publishing your plugin
+
+```bash
+skpm publish <bump>
+```
+
+(where `bump` can be `patch`, `minor` or `major`)
+
+`skpm publish` will create a new release on your GitHub repository and create an appcast file in order for Sketch users to be notified of the update.
+
+You will need to specify a `repository` in the `package.json`:
+
+```diff
+...
++ "repository" : {
++   "type": "git",
++   "url": "git+https://github.com/ORG/NAME.git"
++  }
+...
+```
