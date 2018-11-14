@@ -1,25 +1,185 @@
 {
-  "compatibleVersion": 3,
+  "name" : "Nudge, Push, Shove",
+  "description" : "Change the big and small nudge settings for Sketch. Plus, get access to an even bigger nudge setting.",
+  "version" : "1.3.1",
+  "identifier" : "com.mfouquet.sketch.nudgepushshove",
+  "author" : "Michael Fouquet",
+  "authorEmail" : "michael.fouquet@me.com",
+  "appcast" : "https://raw.githubusercontent.com/mfouquet/NudgePushShove/master/appcast.xml",
+  "compatibleVersion" : 4.1,
   "bundleVersion": 1,
-  "icon": "icon.png",
-  "commands": [
+  "commands" : [
     {
-      "name": "my-command",
-      "identifier": "my-command-identifier",
-      "script": "my-command.js"
+      "script" : "nudgePushShove.js",
+      "handler" : "onRun",
+      "shortcut" : "ctrl cmd n",
+      "name" : "Change Nudge Settings",
+      "identifier" : "nudgePushShove",
+      "description" : "Change your Nudge, Push, Shove settings.",
+      "icon" : "icons/SettingsIcon.png"
+    },
+    {
+      "identifier" : "adjustNudge1",
+      "script" : "adjustNudge.js",
+      "handler" : "adjustNudge1",
+      "name": "Set Nudge to 1",
+      "description" : "Updates your small nudge setting to the default 1px.",
+      "icon" : "icons/Nudge1Icon.png"
+    },
+    {
+      "identifier" : "adjustNudge2",
+      "script" : "adjustNudge.js",
+      "handler" : "adjustNudge2",
+      "name": "Set Nudge to 2",
+      "description" : "Updates your small nudge setting to 2px.",
+      "icon" : "icons/Nudge2Icon.png"
+    },
+    {
+      "identifier" : "adjustNudge4",
+      "script" : "adjustNudge.js",
+      "handler" : "adjustNudge4",
+      "name": "Set Nudge to 4",
+      "description" : "Updates your small nudge setting to 4px.",
+      "icon" : "icons/Nudge4Icon.png"
+    },
+    {
+      "identifier" : "adjustNudge8",
+      "script" : "adjustNudge.js",
+      "handler" : "adjustNudge8",
+      "name": "Set Nudge to 8",
+      "description" : "Updates your small nudge setting to 8px.",
+      "icon" : "icons/Nudge8Icon.png"
+    },
+    {
+      "identifier" : "adjustPush10",
+      "script" : "adjustPush.js",
+      "handler" : "adjustPush10",
+      "name": "Set Push to 10",
+      "description" : "Updates your big nudge setting to the default 10px.",
+      "icon" : "icons/Push10Icon.png"
+    },
+    {
+      "identifier" : "adjustPush16",
+      "script" : "adjustPush.js",
+      "handler" : "adjustPush16",
+      "name": "Set Push to 16",
+      "description" : "Updates your big nudge setting to 16px.",
+      "icon" : "icons/Push16Icon.png"
+    },
+    {
+      "identifier" : "adjustPush24",
+      "script" : "adjustPush.js",
+      "handler" : "adjustPush24",
+      "name": "Set Push to 24",
+      "description" : "Updates your big nudge setting to 24px.",
+      "icon" : "icons/Push24Icon.png"
+    },
+    {
+      "identifier" : "adjustPush32",
+      "script" : "adjustPush.js",
+      "handler" : "adjustPush32",
+      "name": "Set Push to 32",
+      "description" : "Updates your big nudge setting to 32px.",
+      "icon" : "icons/Push32Icon.png"
+    },
+    {
+      "identifier" : "adjustShove15",
+      "script" : "adjustShove.js",
+      "handler" : "adjustShove15",
+      "name": "Set Shove to 15",
+      "description" : "Updates your shove nudge setting to the default 15px.",
+      "icon" : "icons/Shove15Icon.png"
+    },
+    {
+      "identifier" : "adjustShove48",
+      "script" : "adjustShove.js",
+      "handler" : "adjustShove48",
+      "name": "Set Shove to 48",
+      "description" : "Updates your shove nudge setting to 48px.",
+      "icon" : "icons/Shove48Icon.png"
+    },
+    {
+      "identifier" : "adjustShove64",
+      "script" : "adjustShove.js",
+      "handler" : "adjustShove64",
+      "name": "Set Shove to 64",
+      "description" : "Updates your shove nudge setting to 64px.",
+      "icon" : "icons/Shove64Icon.png"
+    },
+    {
+      "identifier" : "adjustShove128",
+      "script" : "adjustShove.js",
+      "handler" : "adjustShove128",
+      "name": "Set Shove to 128",
+      "description" : "Updates your shove nudge setting to 128px.",
+      "icon" : "icons/Shove128Icon.png"
+    },
+    {
+      "identifier" : "shoveUp",
+      "script" : "runShove.js",
+      "handler" : "shoveUp",
+      "shortcut": "option shift ↑",
+      "name": "Up",
+      "description" : "Shove your layer(s) up.",
+      "icon" : "icons/ShoveUpIcon.png"
+    },
+    {
+      "identifier" : "shoveRight",
+      "script" : "runShove.js",
+      "handler" : "shoveRight",
+      "shortcut": "option shift →",
+      "name": "Right",
+      "description" : "Shove your layer(s) right.",
+      "icon" : "icons/ShoveRightIcon.png"
+    },
+    {
+      "identifier" : "shoveDown",
+      "script" : "runShove.js",
+      "handler" : "shoveDown",
+      "shortcut": "option shift ↓",
+      "name": "Down",
+      "description" : "Shove your layer(s) down.",
+      "icon" : "icons/ShoveDownIcon.png"
+    },
+    {
+      "identifier" : "shoveLeft",
+      "script" : "runShove.js",
+      "handler" : "shoveLeft",
+      "shortcut": "option shift ←",
+      "name": "Left",
+      "description" : "Shove your layer(s) left.",
+      "icon" : "icons/ShoveLeftIcon.png"
     }
   ],
-  "menu": {
-    "title": "NudgePushShove",
-    "items": [
-      "my-command-identifier"
+  "menu" : {
+    "title": "Nudge, Push, Shove.",
+    "items" : [
+      "nudgePushShove",
+      "-",
+      "adjustNudge1",
+      "adjustNudge2",
+      "adjustNudge4",
+      "adjustNudge8",
+      "-",
+      "adjustPush10",
+      "adjustPush16",
+      "adjustPush24",
+      "adjustPush32",
+      "-",
+      "adjustShove15",
+      "adjustShove48",
+      "adjustShove64",
+      "adjustShove128",
+      "-",
+      {
+        "title": "Shove",
+        "items": [
+          "shoveUp",
+          "shoveRight",
+          "shoveDown",
+          "shoveLeft"
+        ]
+      }
     ]
-  },
-  "version": "0.1.0",
-  "name": "NudgePushShove",
-  "identifier": "NudgePushShove",
-  "disableCocoaScriptPreprocessor": true,
-  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
-  "author": "Michael Fouquet",
-  "authorEmail": "michael.fouquet@me.com"
+  }
 }
