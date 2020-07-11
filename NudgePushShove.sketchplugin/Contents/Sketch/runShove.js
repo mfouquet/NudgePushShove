@@ -95,97 +95,164 @@ var exports =
 /*!********************************!*\
   !*** ./src/sketch/runShove.js ***!
   \********************************/
-/*! no exports provided */
+/*! exports provided: shoveUp, shoveRight, shoveDown, shoveLeft */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_json_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/json.js */ "./src/sketch/utils/json.js");
-/* harmony import */ var _utils_json_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utils_json_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shoveUp", function() { return shoveUp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shoveRight", function() { return shoveRight; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shoveDown", function() { return shoveDown; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shoveLeft", function() { return shoveLeft; });
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
+/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities_utilities_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities/utilities.js */ "./src/sketch/utilities/utilities.js");
+/* harmony import */ var _utilities_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities/constants */ "./src/sketch/utilities/constants.js");
 
 
-var shoveUp = function shoveUp(context) {
-  shoveObjects(context, "up");
+
+
+var shoveUp = function shoveUp() {
+  shoveObjects("up");
 };
 
-var shoveRight = function shoveRight(context) {
-  shoveObjects(context, "right");
+var shoveRight = function shoveRight() {
+  shoveObjects("right");
 };
 
-var shoveDown = function shoveDown(context) {
-  shoveObjects(context, "down");
+var shoveDown = function shoveDown() {
+  shoveObjects("down");
 };
 
-var shoveLeft = function shoveLeft(context) {
-  shoveObjects(context, "left");
+var shoveLeft = function shoveLeft() {
+  shoveObjects("left");
 };
 
-function shoveObjects(context, direction) {// var sketch = context.api();
-  // var document = sketch.selectedDocument;
-  // var selection = document.selectedLayers;
-  // var shoveAmount = getShoveAmount(context);
-  // var sketchLayer;
-  // selection.iterate(function(layer) {
-  //   sketchLayer = layer.sketchObject;
-  //   if (sketchLayer.class() == "MSTextLayer" && sketchLayer.isEditingText()) {
-  //     return;
-  //   }
-  //   if (direction === 'up') {
-  //     sketchLayer.frame().setY(parseFloat(sketchLayer.frame().y()) - parseFloat(shoveAmount));
-  //   } else if (direction === 'right') {
-  //     sketchLayer.frame().setX(parseFloat(sketchLayer.frame().x()) + parseFloat(shoveAmount));
-  //   } else if (direction === 'down') {
-  //     sketchLayer.frame().setY(parseFloat(sketchLayer.frame().y()) + parseFloat(shoveAmount));
-  //   } else if (direction === 'left') {
-  //     sketchLayer.frame().setX(parseFloat(sketchLayer.frame().x()) - parseFloat(shoveAmount));
-  //   }
-  // });
-  // document.sketchObject.reloadInspector();
-}
+var shoveObjects = function shoveObjects(direction) {
+  var shoveAmount = _utilities_utilities_js__WEBPACK_IMPORTED_MODULE_1__["loadPluginSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_PLUGIN_SHOVE"]) || 15;
+  var doc = sketch__WEBPACK_IMPORTED_MODULE_0___default.a.getSelectedDocument();
+  var selection = doc.selectedLayers;
+  selection.forEach(function (layer) {
+    switch (direction) {
+      case "up":
+        {
+          layer.frame.y = layer.frame.y - shoveAmount;
+          break;
+        }
 
-function getShoveAmount(context) {// var shoveAmount;
-  // if (!mainThreadDict[kShoveAmount]) {
-  //   const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-  //   const settingsFile = jsonFromFile(scriptPath + '/utils/settings.js', true);
-  //   shoveAmount = settingsFile.shove;
-  //   mainThreadDict[kShoveAmount] = shoveAmount;
-  // } else {
-  //   shoveAmount = mainThreadDict[kShoveAmount];
-  // }
-  // return shoveAmount;
-}
+      case "right":
+        {
+          layer.frame.x = layer.frame.x + shoveAmount;
+          break;
+        }
+
+      case "down":
+        {
+          layer.frame.y = layer.frame.y + shoveAmount;
+          break;
+        }
+
+      case "left":
+        {
+          layer.frame.x = layer.frame.x - shoveAmount;
+          break;
+        }
+    }
+  });
+};
+
+
 
 /***/ }),
 
-/***/ "./src/sketch/utils/json.js":
+/***/ "./src/sketch/utilities/constants.js":
+/*!*******************************************!*\
+  !*** ./src/sketch/utilities/constants.js ***!
+  \*******************************************/
+/*! exports provided: SETTINGS_GLOBAL_NUDGESMALL, SETTINGS_GLOBAL_NUDGEBIG, SETTINGS_PLUGIN_SHOVE */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_GLOBAL_NUDGESMALL", function() { return SETTINGS_GLOBAL_NUDGESMALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_GLOBAL_NUDGEBIG", function() { return SETTINGS_GLOBAL_NUDGEBIG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_PLUGIN_SHOVE", function() { return SETTINGS_PLUGIN_SHOVE; });
+var SETTINGS_GLOBAL_NUDGESMALL = "nudgeDistanceSmall";
+var SETTINGS_GLOBAL_NUDGEBIG = "nudgeDistanceBig";
+var SETTINGS_PLUGIN_SHOVE = "shove"; // const SETTINGS_STATUS = "subscription-status";
+// const SETTINGS_EMAIL = "email";
+// const SETTINGS_FREQUENCY = "frequency";
+// const SETTINGS_VERIFICATION = "verification";
+// const SETTINGS_MIXPANELID = "mixpanel-unique-id";
+// const URL_PRICING = "http://getstark.co/pricing";
+// const URL_SUPPORT = "http://support.getstark.co/";
+
+
+
+/***/ }),
+
+/***/ "./src/sketch/utilities/utilities.js":
+/*!*******************************************!*\
+  !*** ./src/sketch/utilities/utilities.js ***!
+  \*******************************************/
+/*! exports provided: saveGlobalSetting, savePluginSetting, loadPluginSetting */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveGlobalSetting", function() { return saveGlobalSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "savePluginSetting", function() { return savePluginSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadPluginSetting", function() { return loadPluginSetting; });
+/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch/settings */ "sketch/settings");
+/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch_settings__WEBPACK_IMPORTED_MODULE_0__);
+
+/* 
+Saves a global setting in Sketch to the provided key
+*/
+
+var saveGlobalSetting = function saveGlobalSetting(key, value) {
+  sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.setGlobalSettingForKey(key, value);
+};
+/* 
+Saves a plugin setting in Sketch to the provided key
+*/
+
+
+var savePluginSetting = function savePluginSetting(key, value) {
+  sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.setSettingForKey("com.mfouquet.sketch.nudgepushshove.".concat(key), value);
+};
+/* 
+Loads a setting in Sketch with the provided key
+*/
+
+
+var loadPluginSetting = function loadPluginSetting(key) {
+  return sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.settingForKey("com.mfouquet.sketch.nudgepushshove.".concat(key));
+};
+
+
+
+/***/ }),
+
+/***/ "sketch":
+/*!*************************!*\
+  !*** external "sketch" ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("sketch");
+
+/***/ }),
+
+/***/ "sketch/settings":
 /*!**********************************!*\
-  !*** ./src/sketch/utils/json.js ***!
+  !*** external "sketch/settings" ***!
   \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var saveJsonToFile = function saveJsonToFile(context, jsonObject, filePath) {// var scriptPath = context.scriptPath;
-  // var scriptFolder = [scriptPath stringByDeletingLastPathComponent];
-  // writeTextToFile(stringify(jsonObject), scriptFolder + filePath);
-};
-
-var stringify = function stringify(obj, prettyPrinted) {// var prettySetting = prettyPrinted ? NSJSONWritingPrettyPrinted : 0,
-  // jsonData = [NSJSONSerialization dataWithJSONObject:obj options:prettySetting error:nil];
-  // return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-};
-
-var writeTextToFile = function writeTextToFile(text, filePath) {// var t = [NSString stringWithFormat:@"%@", text],
-  // f = [NSString stringWithFormat:@"%@", filePath];
-  // return [t writeToFile:f atomically:true encoding:NSUTF8StringEncoding error:nil];
-};
-
-var jsonFromFile = function jsonFromFile(filePath, mutable) {// var data = [NSData dataWithContentsOfFile:filePath];
-  // if (!data) {
-  //   return null;
-  // }
-  // var options = mutable == true ? NSJSONReadingMutableContainers : 0
-  // return [NSJSONSerialization JSONObjectWithData:data options:options error:nil];
-};
+module.exports = require("sketch/settings");
 
 /***/ })
 

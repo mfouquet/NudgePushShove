@@ -1,28 +1,24 @@
-import utils from "./utils/json.js";
+import * as utils from "./utilities/utilities";
+import { SETTINGS_GLOBAL_NUDGESMALL } from "./utilities/constants";
 
-const adjustNudge1 = (context) => {
-  saveNudgeAmount(context, "1");
+const adjustNudge1 = () => {
+  saveNudgeAmount(1);
 };
 
-const adjustNudge2 = (context) => {
-  saveNudgeAmount(context, "2");
+const adjustNudge2 = () => {
+  saveNudgeAmount(2);
 };
 
-const adjustNudge4 = (context) => {
-  saveNudgeAmount(context, "4");
+const adjustNudge4 = () => {
+  saveNudgeAmount(4);
 };
 
-const adjustNudge8 = (context) => {
-  saveNudgeAmount(context, "8");
+const adjustNudge8 = () => {
+  saveNudgeAmount(8);
 };
 
-saveNudgeAmount = (context, amount) => {
-  // var app = context.api().Application();
-  // app.setSettingForKey("nudgeDistanceSmall", amount);
-  // const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-  // var settingsObj = jsonFromFile(scriptPath + "/utils/settings.js", true);
-  // settingsObj.nudge = amount;
-  // saveJsonToFile(context, settingsObj, "/utils/settings.js");
+const saveNudgeAmount = (amount) => {
+  utils.saveGlobalSetting(SETTINGS_GLOBAL_NUDGESMALL, amount);
 };
 
 export { adjustNudge1, adjustNudge2, adjustNudge4, adjustNudge8 };

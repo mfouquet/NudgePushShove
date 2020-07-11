@@ -1,54 +1,49 @@
-import utils from "./utils/json.js";
+import sketch from "sketch";
+import * as utils from "./utilities/utilities.js";
+import { SETTINGS_PLUGIN_SHOVE } from "./utilities/constants";
 
-const shoveUp = (context) => {
-  shoveObjects(context, "up");
+const shoveUp = () => {
+  shoveObjects("up");
 };
 
-const shoveRight = (context) => {
-  shoveObjects(context, "right");
+const shoveRight = () => {
+  shoveObjects("right");
 };
 
-const shoveDown = (context) => {
-  shoveObjects(context, "down");
+const shoveDown = () => {
+  shoveObjects("down");
 };
 
-const shoveLeft = (context) => {
-  shoveObjects(context, "left");
+const shoveLeft = () => {
+  shoveObjects("left");
 };
 
-function shoveObjects(context, direction) {
-  // var sketch = context.api();
-  // var document = sketch.selectedDocument;
-  // var selection = document.selectedLayers;
-  // var shoveAmount = getShoveAmount(context);
-  // var sketchLayer;
-  // selection.iterate(function(layer) {
-  //   sketchLayer = layer.sketchObject;
-  //   if (sketchLayer.class() == "MSTextLayer" && sketchLayer.isEditingText()) {
-  //     return;
-  //   }
-  //   if (direction === 'up') {
-  //     sketchLayer.frame().setY(parseFloat(sketchLayer.frame().y()) - parseFloat(shoveAmount));
-  //   } else if (direction === 'right') {
-  //     sketchLayer.frame().setX(parseFloat(sketchLayer.frame().x()) + parseFloat(shoveAmount));
-  //   } else if (direction === 'down') {
-  //     sketchLayer.frame().setY(parseFloat(sketchLayer.frame().y()) + parseFloat(shoveAmount));
-  //   } else if (direction === 'left') {
-  //     sketchLayer.frame().setX(parseFloat(sketchLayer.frame().x()) - parseFloat(shoveAmount));
-  //   }
-  // });
-  // document.sketchObject.reloadInspector();
-}
+const shoveObjects = (direction) => {
+  const shoveAmount = utils.loadPluginSetting(SETTINGS_PLUGIN_SHOVE) || 15;
 
-function getShoveAmount(context) {
-  // var shoveAmount;
-  // if (!mainThreadDict[kShoveAmount]) {
-  //   const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-  //   const settingsFile = jsonFromFile(scriptPath + '/utils/settings.js', true);
-  //   shoveAmount = settingsFile.shove;
-  //   mainThreadDict[kShoveAmount] = shoveAmount;
-  // } else {
-  //   shoveAmount = mainThreadDict[kShoveAmount];
-  // }
-  // return shoveAmount;
-}
+  const doc = sketch.getSelectedDocument();
+  const selection = doc.selectedLayers;
+
+  selection.forEach((layer) => {
+    switch (direction) {
+      case "up": {
+        layer.frame.y = layer.frame.y - shoveAmount;
+        break;
+      }
+      case "right": {
+        layer.frame.x = layer.frame.x + shoveAmount;
+        break;
+      }
+      case "down": {
+        layer.frame.y = layer.frame.y + shoveAmount;
+        break;
+      }
+      case "left": {
+        layer.frame.x = layer.frame.x - shoveAmount;
+        break;
+      }
+    }
+  });
+};
+
+export { shoveUp, shoveRight, shoveDown, shoveLeft };

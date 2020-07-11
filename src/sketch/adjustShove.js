@@ -1,27 +1,24 @@
-import utils from "./utils/json.js";
+import * as utils from "./utilities/utilities";
+import { SETTINGS_PLUGIN_SHOVE } from "./utilities/constants";
 
-const adjustShove15 = (context) => {
-  saveShoveAmount(context, "15");
+const adjustShove15 = () => {
+  saveShoveAmount(15);
 };
 
-const adjustShove48 = (context) => {
-  saveShoveAmount(context, "48");
+const adjustShove48 = () => {
+  saveShoveAmount(48);
 };
 
-const adjustShove64 = (context) => {
-  saveShoveAmount(context, "64");
+const adjustShove64 = () => {
+  saveShoveAmount(64);
 };
 
-const adjustShove128 = (context) => {
-  saveShoveAmount(context, "128");
+const adjustShove128 = () => {
+  saveShoveAmount(128);
 };
 
-saveShoveAmount = (context, amount) => {
-  // mainThreadDict[kShoveAmount] = amount;
-  // const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-  // var settingsObj = jsonFromFile(scriptPath + '/utils/settings.js', true);
-  // settingsObj.shove = amount;
-  // saveJsonToFile(context, settingsObj, '/utils/settings.js');
+const saveShoveAmount = (amount) => {
+  utils.savePluginSetting(SETTINGS_PLUGIN_SHOVE, amount);
 };
 
 export { adjustShove15, adjustShove48, adjustShove64, adjustShove128 };

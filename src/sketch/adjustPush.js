@@ -1,28 +1,24 @@
-import utils from "./utils/json.js";
+import * as utils from "./utilities/utilities";
+import { SETTINGS_GLOBAL_NUDGEBIG } from "./utilities/constants";
 
-const adjustPush10 = (context) => {
-  savePushAmount(context, "10");
+const adjustPush10 = () => {
+  savePushAmount(10);
 };
 
-const adjustPush16 = (context) => {
-  savePushAmount(context, "16");
+const adjustPush16 = () => {
+  savePushAmount(16);
 };
 
-const adjustPush24 = (context) => {
-  savePushAmount(context, "24");
+const adjustPush24 = () => {
+  savePushAmount(24);
 };
 
-const adjustPush32 = (context) => {
-  savePushAmount(context, "32");
+const adjustPush32 = () => {
+  savePushAmount(32);
 };
 
-savePushAmount = (context, amount) => {
-  // var app = context.api().Application();
-  // app.setSettingForKey("nudgeDistanceBig", amount);
-  // const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-  // var settingsObj = jsonFromFile(scriptPath + "/utils/settings.js", true);
-  // settingsObj.push = amount;
-  // saveJsonToFile(context, settingsObj, "/utils/settings.js");
+const savePushAmount = (amount) => {
+  utils.saveGlobalSetting(SETTINGS_GLOBAL_NUDGEBIG, amount);
 };
 
 export { adjustPush10, adjustPush16, adjustPush24, adjustPush32 };
