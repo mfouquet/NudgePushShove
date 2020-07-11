@@ -25,6 +25,12 @@ const shoveObjects = (direction) => {
   const selection = doc.selectedLayers;
 
   selection.forEach((layer) => {
+    sketchLayer = layer.sketchObject;
+
+    if (sketchLayer.class() == "MSTextLayer" && sketchLayer.isEditingText()) {
+      return;
+    }
+
     switch (direction) {
       case "up": {
         layer.frame.y = layer.frame.y - shoveAmount;
