@@ -2896,9 +2896,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities/utilities */ "./src/sketch/utilities/utilities.js");
 /* harmony import */ var _utilities_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities/constants */ "./src/sketch/utilities/constants.js");
-/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sketch/settings */ "sketch/settings");
-/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sketch_settings__WEBPACK_IMPORTED_MODULE_3__);
-
 
 
 
@@ -2937,7 +2934,6 @@ __webpack_require__.r(__webpack_exports__);
   });
   webContents.on("saveButtonClicked", function (saveButtonClickedObject) {
     var npsObject = JSON.parse(saveButtonClickedObject);
-    console.log(npsObject);
     _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["saveGlobalSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_GLOBAL_NUDGESMALL"], +npsObject.nudgeAmount);
     _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["saveGlobalSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_GLOBAL_NUDGEBIG"], +npsObject.pushAmount);
     _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["savePluginSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_PLUGIN_SHOVE"], +npsObject.shoveAmount);

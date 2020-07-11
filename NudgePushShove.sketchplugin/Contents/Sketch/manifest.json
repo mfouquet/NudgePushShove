@@ -5,9 +5,12 @@
   "identifier": "com.mfouquet.sketch.nudgepushshove",
   "author": "Michael Fouquet",
   "authorEmail": "michael.fouquet@me.com",
+  "homepage": "http://www.nudgepushshove.com",
   "appcast": "https://raw.githubusercontent.com/mfouquet/NudgePushShove/master/appcast.xml",
   "compatibleVersion": 4.1,
   "bundleVersion": 1,
+  "icon": "images/Logo.png",
+  "disableCocoaScriptPreprocessor": true,
   "commands": [
     {
       "script": "nudgePushShove.js",
@@ -16,7 +19,7 @@
       "name": "Change Nudge Settings",
       "identifier": "nudgePushShove",
       "description": "Change your Nudge, Push, Shove settings.",
-      "icon": "icons/SettingsIcon.png"
+      "icon": "images/SettingsIcon.png"
     },
     {
       "identifier": "adjustNudge1",
@@ -24,7 +27,7 @@
       "handler": "adjustNudge1",
       "name": "Set Nudge to 1",
       "description": "Updates your small nudge setting to the default 1px.",
-      "icon": "icons/Nudge1Icon.png"
+      "icon": "images/Nudge1Icon.png"
     },
     {
       "identifier": "adjustNudge2",
@@ -32,7 +35,7 @@
       "handler": "adjustNudge2",
       "name": "Set Nudge to 2",
       "description": "Updates your small nudge setting to 2px.",
-      "icon": "icons/Nudge2Icon.png"
+      "icon": "images/Nudge2Icon.png"
     },
     {
       "identifier": "adjustNudge4",
@@ -40,7 +43,7 @@
       "handler": "adjustNudge4",
       "name": "Set Nudge to 4",
       "description": "Updates your small nudge setting to 4px.",
-      "icon": "icons/Nudge4Icon.png"
+      "icon": "images/Nudge4Icon.png"
     },
     {
       "identifier": "adjustNudge8",
@@ -48,7 +51,7 @@
       "handler": "adjustNudge8",
       "name": "Set Nudge to 8",
       "description": "Updates your small nudge setting to 8px.",
-      "icon": "icons/Nudge8Icon.png"
+      "icon": "images/Nudge8Icon.png"
     },
     {
       "identifier": "adjustPush10",
@@ -56,7 +59,7 @@
       "handler": "adjustPush10",
       "name": "Set Push to 10",
       "description": "Updates your big nudge setting to the default 10px.",
-      "icon": "icons/Push10Icon.png"
+      "icon": "images/Push10Icon.png"
     },
     {
       "identifier": "adjustPush16",
@@ -64,7 +67,7 @@
       "handler": "adjustPush16",
       "name": "Set Push to 16",
       "description": "Updates your big nudge setting to 16px.",
-      "icon": "icons/Push16Icon.png"
+      "icon": "images/Push16Icon.png"
     },
     {
       "identifier": "adjustPush24",
@@ -72,7 +75,7 @@
       "handler": "adjustPush24",
       "name": "Set Push to 24",
       "description": "Updates your big nudge setting to 24px.",
-      "icon": "icons/Push24Icon.png"
+      "icon": "images/Push24Icon.png"
     },
     {
       "identifier": "adjustPush32",
@@ -80,7 +83,7 @@
       "handler": "adjustPush32",
       "name": "Set Push to 32",
       "description": "Updates your big nudge setting to 32px.",
-      "icon": "icons/Push32Icon.png"
+      "icon": "images/Push32Icon.png"
     },
     {
       "identifier": "adjustShove15",
@@ -88,7 +91,7 @@
       "handler": "adjustShove15",
       "name": "Set Shove to 15",
       "description": "Updates your shove nudge setting to the default 15px.",
-      "icon": "icons/Shove15Icon.png"
+      "icon": "images/Shove15Icon.png"
     },
     {
       "identifier": "adjustShove48",
@@ -96,7 +99,7 @@
       "handler": "adjustShove48",
       "name": "Set Shove to 48",
       "description": "Updates your shove nudge setting to 48px.",
-      "icon": "icons/Shove48Icon.png"
+      "icon": "images/Shove48Icon.png"
     },
     {
       "identifier": "adjustShove64",
@@ -104,7 +107,7 @@
       "handler": "adjustShove64",
       "name": "Set Shove to 64",
       "description": "Updates your shove nudge setting to 64px.",
-      "icon": "icons/Shove64Icon.png"
+      "icon": "images/Shove64Icon.png"
     },
     {
       "identifier": "adjustShove128",
@@ -112,7 +115,7 @@
       "handler": "adjustShove128",
       "name": "Set Shove to 128",
       "description": "Updates your shove nudge setting to 128px.",
-      "icon": "icons/Shove128Icon.png"
+      "icon": "images/Shove128Icon.png"
     },
     {
       "identifier": "shoveUp",
@@ -121,7 +124,7 @@
       "shortcut": "option shift ↑",
       "name": "Up",
       "description": "Shove your layer(s) up.",
-      "icon": "icons/ShoveUpIcon.png"
+      "icon": "images/ShoveUpIcon.png"
     },
     {
       "identifier": "shoveRight",
@@ -130,7 +133,7 @@
       "shortcut": "option shift →",
       "name": "Right",
       "description": "Shove your layer(s) right.",
-      "icon": "icons/ShoveRightIcon.png"
+      "icon": "images/ShoveRightIcon.png"
     },
     {
       "identifier": "shoveDown",
@@ -139,7 +142,7 @@
       "shortcut": "option shift ↓",
       "name": "Down",
       "description": "Shove your layer(s) down.",
-      "icon": "icons/ShoveDownIcon.png"
+      "icon": "images/ShoveDownIcon.png"
     },
     {
       "identifier": "shoveLeft",
@@ -148,7 +151,7 @@
       "shortcut": "option shift ←",
       "name": "Left",
       "description": "Shove your layer(s) left.",
-      "icon": "icons/ShoveLeftIcon.png"
+      "icon": "images/ShoveLeftIcon.png"
     }
   ],
   "menu": {
@@ -181,7 +184,5 @@
         ]
       }
     ]
-  },
-  "homepage": "https://www.nudgepushshove.com",
-  "disableCocoaScriptPreprocessor": true
+  }
 }
