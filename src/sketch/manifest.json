@@ -176,12 +176,7 @@
       "-",
       {
         "title": "Shove",
-        "items": [
-          "shoveUp",
-          "shoveRight",
-          "shoveDown",
-          "shoveLeft"
-        ]
+        "items": ["shoveUp", "shoveRight", "shoveDown", "shoveLeft"]
       }
     ]
   }

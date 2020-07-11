@@ -1,29 +1,21 @@
-@import 'utils/json.js';
-
-var adjustPush10 = function(context) {
-  savePushAmount(context, '10');
-}
-
-var adjustPush16 = function(context) {
-  savePushAmount(context, '16');
-}
-
-var adjustPush24 = function(context) {
-  savePushAmount(context, '24');
-}
-
-var adjustPush32 = function(context) {
-  savePushAmount(context, '32');
-}
-
-function savePushAmount(context, amount) {
-  var app = context.api().Application();
-  app.setSettingForKey("nudgeDistanceBig", amount);
-
-  const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-  var settingsObj = jsonFromFile(scriptPath + '/utils/settings.js', true);
-
-  settingsObj.push = amount;
-
-  saveJsonToFile(context, settingsObj, '/utils/settings.js');
-}
+var that=this;function __skpm_run(t,n){that.context=n;var e=function(t){var n={};function e(u){if(n[u])return n[u].exports;var s=n[u]={i:u,l:!1,exports:{}};return t[u].call(s.exports,s,s.exports,e),s.l=!0,s.exports}return e.m=t,e.c=n,e.d=function(t,n,u){e.o(t,n)||Object.defineProperty(t,n,{enumerable:!0,get:u})},e.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},e.t=function(t,n){if(1&n&&(t=e(t)),8&n)return t;if(4&n&&"object"==typeof t&&t&&t.__esModule)return t;var u=Object.create(null);if(e.r(u),Object.defineProperty(u,"default",{enumerable:!0,value:t}),2&n&&"string"!=typeof t)for(var s in t)e.d(u,s,function(n){return t[n]}.bind(null,s));return u},e.n=function(t){var n=t&&t.__esModule?function(){return t.default}:function(){return t};return e.d(n,"a",n),n},e.o=function(t,n){return Object.prototype.hasOwnProperty.call(t,n)},e.p="",e(e.s="./src/sketch/adjustPush.js")}({"./src/sketch/adjustPush.js":
+/*!**********************************!*\
+  !*** ./src/sketch/adjustPush.js ***!
+  \**********************************/
+/*! exports provided: adjustPush10, adjustPush16, adjustPush24, adjustPush32 */function(t,n,e){"use strict";e.r(n),e.d(n,"adjustPush10",function(){return r}),e.d(n,"adjustPush16",function(){return i}),e.d(n,"adjustPush24",function(){return o}),e.d(n,"adjustPush32",function(){return c});var u=e(/*! ./utilities/utilities */"./src/sketch/utilities/utilities.js"),s=e(/*! ./utilities/constants */"./src/sketch/utilities/constants.js"),r=function(){a(10)},i=function(){a(16)},o=function(){a(24)},c=function(){a(32)},a=function(t){u.saveGlobalSetting(s.SETTINGS_GLOBAL_NUDGEBIG,t)}},"./src/sketch/utilities/constants.js":
+/*!*******************************************!*\
+  !*** ./src/sketch/utilities/constants.js ***!
+  \*******************************************/
+/*! exports provided: SETTINGS_GLOBAL_NUDGESMALL, SETTINGS_GLOBAL_NUDGEBIG, SETTINGS_PLUGIN_SHOVE, URL_WEBSITE, URL_USAGE, URL_CHANGELOG */function(t,n,e){"use strict";e.r(n),e.d(n,"SETTINGS_GLOBAL_NUDGESMALL",function(){return u}),e.d(n,"SETTINGS_GLOBAL_NUDGEBIG",function(){return s}),e.d(n,"SETTINGS_PLUGIN_SHOVE",function(){return r}),e.d(n,"URL_WEBSITE",function(){return i}),e.d(n,"URL_USAGE",function(){return o}),e.d(n,"URL_CHANGELOG",function(){return c});var u="nudgeDistanceSmall",s="nudgeDistanceBig",r="shove",i="http://www.nudgepushshove.com/",o="http://www.nudgepushshove.com/#usage",c="https://github.com/mfouquet/NudgePushShove/blob/master/CHANGELOG.md"},"./src/sketch/utilities/utilities.js":
+/*!*******************************************!*\
+  !*** ./src/sketch/utilities/utilities.js ***!
+  \*******************************************/
+/*! exports provided: saveGlobalSetting, loadGlobalSetting, savePluginSetting, loadPluginSetting, openURL, showToast */function(t,n,e){"use strict";e.r(n),e.d(n,"saveGlobalSetting",function(){return o}),e.d(n,"loadGlobalSetting",function(){return c}),e.d(n,"savePluginSetting",function(){return a}),e.d(n,"loadPluginSetting",function(){return f}),e.d(n,"openURL",function(){return d}),e.d(n,"showToast",function(){return h});var u=e(/*! sketch/settings */"sketch/settings"),s=e.n(u),r=e(/*! sketch/ui */"sketch/ui"),i=e.n(r),o=function(t,n){s.a.setGlobalSettingForKey(t,n)},c=function(t){return s.a.globalSettingForKey(t)},a=function(t,n){s.a.setSettingForKey("com.mfouquet.sketch.nudgepushshove.".concat(t),n)},f=function(t){return s.a.settingForKey("com.mfouquet.sketch.nudgepushshove.".concat(t))},d=function(t){var n=NSURL.URLWithString(t);NSWorkspace.sharedWorkspace().openURL(n)},h=function(t){i.a.message(t)}},"sketch/settings":
+/*!**********************************!*\
+  !*** external "sketch/settings" ***!
+  \**********************************/
+/*! no static exports found */function(t,n){t.exports=require("sketch/settings")},"sketch/ui":
+/*!****************************!*\
+  !*** external "sketch/ui" ***!
+  \****************************/
+/*! no static exports found */function(t,n){t.exports=require("sketch/ui")}});"default"===t&&"function"==typeof e?e(n):e[t](n)}that.adjustPush10=__skpm_run.bind(this,"adjustPush10"),that.onRun=__skpm_run.bind(this,"default"),that.adjustPush16=__skpm_run.bind(this,"adjustPush16"),that.adjustPush24=__skpm_run.bind(this,"adjustPush24"),that.adjustPush32=__skpm_run.bind(this,"adjustPush32");
