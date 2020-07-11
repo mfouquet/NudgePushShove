@@ -11,6 +11,8 @@
           <![CDATA[
             <ul>
               <li>Fix appcast.xml versions.</li>
+              <li>Fix issue with parent layer not moving with children.</li>
+              <li>Fix issue with text selection when in editing mode.</li>
             </ul>
           ]]>
         </description>

@@ -3,6 +3,8 @@
 ## 1.4.2
 
 - Fix appcast.xml versions.
+- Fix issue with parent layer not moving with children.
+- Fix issue with text selection when in editing mode.
 
 ## 1.4.1
 
