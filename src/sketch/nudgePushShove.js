@@ -19,10 +19,15 @@ export default function() {
     alwaysOnTop: true,
     title: "nudgepushshove",
     backgroundColor: "#1d2d44",
+    show: false,
   };
 
   const browserWindow = new BrowserWindow(options);
   const webContents = browserWindow.webContents;
+
+  browserWindow.once("ready-to-show", () => {
+    browserWindow.show();
+  });
 
   webContents.on("did-finish-load", () => {
     const npsObject = {

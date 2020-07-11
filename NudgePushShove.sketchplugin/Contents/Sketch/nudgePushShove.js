@@ -2908,10 +2908,14 @@ __webpack_require__.r(__webpack_exports__);
     resizable: false,
     alwaysOnTop: true,
     title: "nudgepushshove",
-    backgroundColor: "#1d2d44"
+    backgroundColor: "#1d2d44",
+    show: false
   };
   var browserWindow = new sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0___default.a(options);
   var webContents = browserWindow.webContents;
+  browserWindow.once("ready-to-show", function () {
+    browserWindow.show();
+  });
   webContents.on("did-finish-load", function () {
     var npsObject = {
       nudgeAmount: _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["loadGlobalSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_GLOBAL_NUDGESMALL"]),
