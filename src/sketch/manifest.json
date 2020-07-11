@@ -173,15 +173,8 @@
       "-",
       {
         "title": "Shove",
-        "items": [
-          "shoveUp",
-          "shoveRight",
-          "shoveDown",
-          "shoveLeft"
-        ]
+        "items": ["shoveUp", "shoveRight", "shoveDown", "shoveLeft"]
       }
     ]
-  },
-  "homepage": "https://www.nudgepushshove.com",
-  "disableCocoaScriptPreprocessor": true
+  }
 }
