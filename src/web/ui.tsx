@@ -115,7 +115,7 @@ export class Plugin extends React.Component<IProps, IState> {
           <span className="separator">&#183;</span>
           <button onClick={this.handleHelpClick}>Help</button>
           <span className="separator">&#183;</span>
-          <button onClick={this.handleVersionClick}>1.4.0</button>
+          <button onClick={this.handleVersionClick}>1.4.1</button>
         </header>
         <main>
           <div className="row">

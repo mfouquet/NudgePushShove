@@ -6,6 +6,18 @@
     <description>Easily customize the small and big nudge settings right within Sketch and get access to an even bigger nudge setting to boot.</description>
     <language>en</language>
       <item>
+        <title>Version 1.4.1</title>
+        <description>
+          <![CDATA[
+            <ul>
+              <li>Fix appcast.xml dates.</li>
+            </ul>
+          ]]>
+        </description>
+        <pubDate>Sat, 11 Jul 2020 08:00:00 +0000</pubDate>
+        <enclosure url="https://github.com/mfouquet/NudgePushShove/archive/v1.4.1.zip" sparkle:version="1.3.1" type="application/octet-stream" />
+      </item>
+      <item>
         <title>Version 1.4.0</title>
         <description>
           <![CDATA[
@@ -14,7 +26,7 @@
             </ul>
           ]]>
         </description>
-        <pubDate>Sat, 11 Jul 2017 08:00:00 +0000</pubDate>
+        <pubDate>Sat, 11 Jul 2020 08:00:00 +0000</pubDate>
         <enclosure url="https://github.com/mfouquet/NudgePushShove/archive/v1.4.0.zip" sparkle:version="1.3.1" type="application/octet-stream" />
       </item>
       <item>
