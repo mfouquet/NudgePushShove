@@ -25,6 +25,12 @@ const shoveObjects = (direction) => {
   const selection = doc.selectedLayers;
 
   selection.forEach((layer) => {
+    const sketchLayer = layer.sketchObject;
+
+    if (sketchLayer.class() == "MSTextLayer" && sketchLayer.isEditingText()) {
+      return;
+    }
+
     switch (direction) {
       case "up": {
         layer.frame.y = layer.frame.y - shoveAmount;
@@ -42,6 +48,14 @@ const shoveObjects = (direction) => {
         layer.frame.x = layer.frame.x - shoveAmount;
         break;
       }
+    }
+
+    if (layer.type === "Group") {
+      layer.adjustToFit();
+    }
+
+    if (layer.parent.type === "Group") {
+      layer.parent.adjustToFit();
     }
   });
 };
