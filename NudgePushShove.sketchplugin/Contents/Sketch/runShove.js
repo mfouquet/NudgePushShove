@@ -133,7 +133,7 @@ var shoveObjects = function shoveObjects(direction) {
   var doc = sketch__WEBPACK_IMPORTED_MODULE_0___default.a.getSelectedDocument();
   var selection = doc.selectedLayers;
   selection.forEach(function (layer) {
-    sketchLayer = layer.sketchObject;
+    var sketchLayer = layer.sketchObject;
 
     if (sketchLayer.class() == "MSTextLayer" && sketchLayer.isEditingText()) {
       return;
@@ -163,6 +163,14 @@ var shoveObjects = function shoveObjects(direction) {
           layer.frame.x = layer.frame.x - shoveAmount;
           break;
         }
+    }
+
+    if (layer.type === "Group") {
+      layer.adjustToFit();
+    }
+
+    if (layer.parent.type === "Group") {
+      layer.parent.adjustToFit();
     }
   });
 };
