@@ -1,0 +1,19 @@
+{
+  "name": "nudgepushshove",
+  "version": "1.0.0",
+  "description": "Adjust your Sketch spacing settings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfouquet/NudgePushShove.git"
+  },
+  "author": "Michael Fouquet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfouquet/NudgePushShove/issues"
+  },
+  "homepage": "https://www.nudgepushshove.com"
+}
