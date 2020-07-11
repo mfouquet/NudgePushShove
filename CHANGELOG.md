@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.4.2
+
+- Fix appcast.xml versions.
+
 ## 1.4.1
 
 - Fix appcast.xml dates.
