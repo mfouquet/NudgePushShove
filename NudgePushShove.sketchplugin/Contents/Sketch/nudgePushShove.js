@@ -2892,133 +2892,12 @@ module.exports = function buildAPI(browserWindow, panel, webview) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
-/* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
-/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1__);
-// @import 'utils/nibui.js';
-// @import 'utils/json.js';
-// @import 'utils/threading.js';
-// var COSCRIPT;
-// var app;
-var onRun = function onRun(context) {// // ====
-  // // Prepare app and COSCRIPT
-  // if (!app) app = context.api().Application();
-  // COSCRIPT = COScript.currentCOScript();
-  // COSCRIPT.setShouldKeepAround(true);
-  // var sharedApp = NSApplication.sharedApplication();
-  // // Determine if the plugin window is already open
-  // var openWindow = false;
-  // for (var i = 0; i < sharedApp.windows().count(); i++) {
-  //   var window = sharedApp.windows().objectAtIndex(i);
-  //   if (window.identifier() == 'nudgepushshove') {
-  //     openWindow = true;
-  //     window.makeKeyAndOrderFront(null);
-  //   }
-  // }
-  // if (openWindow) {
-  //   return;
-  // }
-  // // ====
-  // // Prepare the NIB so we can do stuff with the UI
-  // const nibui = new NibUI(context, 'UIBundle', 'NudgePushShoveNibUITemplate', [
-  //   'mainWindow',
-  //   'textCustomNudge', 'textCustomPush', 'textCustomShove',
-  //   'btnWebsite', 'btnHelp', 'btnVersion',
-  //   'checkHotkey', 'btnSave', 'btnReset'
-  // ]);
-  // // ====
-  // // Set up the window styling
-  // nibui.mainWindow.setTitlebarAppearsTransparent(true);
-  // nibui.mainWindow.standardWindowButton(NSWindowCloseButton).setHidden(false);
-  // nibui.mainWindow.standardWindowButton(NSWindowMiniaturizeButton).setHidden(true);
-  // nibui.mainWindow.standardWindowButton(NSWindowZoomButton).setHidden(true);
-  // // ====
-  // // Load up the settings file
-  // const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-  // const settingsFile = jsonFromFile(scriptPath + '/utils/settings.js', true);
-  // // ====
-  // // Prepare the rest of the UI
-  // nibui.textCustomNudge.setCornerRadius(4);
-  // nibui.textCustomPush.setCornerRadius(4);
-  // nibui.textCustomShove.setCornerRadius(4);
-  // nibui.btnSave.setCornerRadius(4);
-  // nibui.textCustomNudge.setStringValue(settingsFile.nudge);
-  // nibui.textCustomPush.setStringValue(settingsFile.push);
-  // nibui.textCustomShove.setStringValue(settingsFile.shove);
-  // nibui.checkHotkey.setState(settingsFile.hotkeyCheck == 'command' ? NSOnState : NSOffState);
-  // // ====
-  // // Attach an action to the Website Button
-  // nibui.attachTargetAndAction(nibui.btnWebsite, function() {
-  //   NSWorkspace.sharedWorkspace()
-  //     .openURL(NSURL.URLWithString("http://www.nudgepushshove.com/"));
-  // });
-  // // ====
-  // // Attach an action to the Help Button
-  // nibui.attachTargetAndAction(nibui.btnHelp, function() {
-  //   NSWorkspace.sharedWorkspace()
-  //     .openURL(NSURL.URLWithString("http://www.nudgepushshove.com/#usage"));
-  // });
-  // // ====
-  // // Attach an action to the Version Button
-  // nibui.attachTargetAndAction(nibui.btnVersion, function() {
-  //   NSWorkspace.sharedWorkspace()
-  //     .openURL(NSURL.URLWithString("https://github.com/mfouquet/NudgePushShove/blob/master/CHANGELOG.md"));
-  // });
-  // // ====
-  // // Attach an action to the Save Button
-  // nibui.attachTargetAndAction(nibui.btnSave, function() {
-  //   updateNudgeDistance(context, nibui);
-  // });
-  // // ====
-  // // Attach an action to the Reset Button
-  // nibui.attachTargetAndAction(nibui.btnReset, function() {
-  //   updateNudgeDistance(context, nibui, true);
-  //   nibui.textCustomNudge.setStringValue("1");
-  //   nibui.textCustomPush.setStringValue("10");
-  //   nibui.textCustomShove.setStringValue("15");
-  // });
-  // // ====
-  // // Finish up UI work
-  // nibui.mainWindow.makeKeyAndOrderFront(null);
-  // nibui.mainWindow.setLevel(NSFloatingWindowLevel);
-  // nibui.destroy();
-}; // function updateNudgeDistance(context, nibui, reset) {
-//   const scriptPath = context.scriptPath.stringByDeletingLastPathComponent();
-//   const manifestObj = jsonFromFile(scriptPath + '/manifest.json', true);
-//   const hotkeyModifier = nibui.checkHotkey.state() == true ? 'command' : 'option';
-//   for (i = 0; i < manifestObj.commands.length; i++) {
-//     if (manifestObj.commands[i].name == 'Up') {
-//       manifestObj.commands[i].shortcut = hotkeyModifier + ' shift ↑';
-//     } else if (manifestObj.commands[i].name == 'Down') {
-//       manifestObj.commands[i].shortcut = hotkeyModifier + ' shift ↓';
-//     } else if (manifestObj.commands[i].name == 'Left') {
-//       manifestObj.commands[i].shortcut = hotkeyModifier + ' shift ←';
-//     } else if (manifestObj.commands[i].name == 'Right') {
-//       manifestObj.commands[i].shortcut = hotkeyModifier + ' shift →';
-//     }
-//   }
-//   saveJsonToFile(context, manifestObj, '/manifest.json');
-//   const settingsObj = {
-//     nudge: reset ? "1" : nibui.textCustomNudge.stringValue(),
-//     push: reset ? "10" : nibui.textCustomPush.stringValue(),
-//     shove: reset ? "15" : nibui.textCustomShove.stringValue(),
-//     hotkeyCheck: nibui.checkHotkey.state() == true ? 'command' : 'option'
-//   };
-//   mainThreadDict[kShoveAmount] = settingsObj.shove;
-//   updateSketchNudgeSettings(context, settingsObj);
-//   saveJsonToFile(context, settingsObj, '/utils/settings.js');
-// }
-// function updateSketchNudgeSettings(context, settings) {
-//   // We have to save the reference to the app because it doesn't seem
-//   // to save between opening and closing of the plugin.
-//   // Additionally, this new method on the Application makes it easier
-//   // to save the user's settings.  No more NSTask for each setting.
-//   // Crack open the following file to see all you can update:
-//   // ~/Library/Preferences/com.bohemiancoding.sketch3.plist
-//   app.setSettingForKey("nudgeDistanceSmall", settings.nudge)
-//   app.setSettingForKey("nudgeDistanceBig", settings.push)
-// }
+/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch-module-web-view */ "./node_modules/sketch-module-web-view/lib/index.js");
+/* harmony import */ var sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities/utilities */ "./src/sketch/utilities/utilities.js");
+/* harmony import */ var _utilities_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities/constants */ "./src/sketch/utilities/constants.js");
+/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sketch/settings */ "sketch/settings");
+/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sketch_settings__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -3034,18 +2913,137 @@ var onRun = function onRun(context) {// // ====
     title: "nudgepushshove",
     backgroundColor: "#1d2d44"
   };
-  var browserWindow = new sketch_module_web_view__WEBPACK_IMPORTED_MODULE_1___default.a(options);
+  var browserWindow = new sketch_module_web_view__WEBPACK_IMPORTED_MODULE_0___default.a(options);
   var webContents = browserWindow.webContents;
   webContents.on("did-finish-load", function () {
-    webContents.executeJavaScript("prepareFirstLoad('Show Check Contrast', '".concat(JSON.stringify(""), "')")).catch(console.error); // utils.callMixpanelTrackEvent(
-    //   webContents,
-    //   "Opened Plugin",
-    //   "Check Contrast",
-    //   hasTextLayer ? "Text" : "Shape"
-    // );
+    var npsObject = {
+      nudgeAmount: _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["loadGlobalSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_GLOBAL_NUDGESMALL"]),
+      pushAmount: _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["loadGlobalSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_GLOBAL_NUDGEBIG"]),
+      shoveAmount: _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["loadPluginSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_PLUGIN_SHOVE"])
+    };
+    webContents.executeJavaScript("prepareFirstLoad('".concat(JSON.stringify(npsObject), "')")).catch(console.error);
+  });
+  webContents.on("dismissClicked", function () {
+    browserWindow.close();
+  });
+  webContents.on("websiteButtonClicked", function () {
+    _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["openURL"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["URL_WEBSITE"]);
+  });
+  webContents.on("helpButtonClicked", function () {
+    _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["openURL"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["URL_USAGE"]);
+  });
+  webContents.on("versionButtonClicked", function () {
+    _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["openURL"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["URL_CHANGELOG"]);
+  });
+  webContents.on("saveButtonClicked", function (saveButtonClickedObject) {
+    var npsObject = JSON.parse(saveButtonClickedObject);
+    console.log(npsObject);
+    _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["saveGlobalSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_GLOBAL_NUDGESMALL"], +npsObject.nudgeAmount);
+    _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["saveGlobalSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_GLOBAL_NUDGEBIG"], +npsObject.pushAmount);
+    _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["savePluginSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_PLUGIN_SHOVE"], +npsObject.shoveAmount);
+    _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["showToast"]("Nudge, Push, Shove settings saved successfully!");
   });
   browserWindow.loadURL(__webpack_require__(/*! ../web/ui.html */ "./src/web/ui.html"));
 });
+
+/***/ }),
+
+/***/ "./src/sketch/utilities/constants.js":
+/*!*******************************************!*\
+  !*** ./src/sketch/utilities/constants.js ***!
+  \*******************************************/
+/*! exports provided: SETTINGS_GLOBAL_NUDGESMALL, SETTINGS_GLOBAL_NUDGEBIG, SETTINGS_PLUGIN_SHOVE, URL_WEBSITE, URL_USAGE, URL_CHANGELOG */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_GLOBAL_NUDGESMALL", function() { return SETTINGS_GLOBAL_NUDGESMALL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_GLOBAL_NUDGEBIG", function() { return SETTINGS_GLOBAL_NUDGEBIG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_PLUGIN_SHOVE", function() { return SETTINGS_PLUGIN_SHOVE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL_WEBSITE", function() { return URL_WEBSITE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL_USAGE", function() { return URL_USAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL_CHANGELOG", function() { return URL_CHANGELOG; });
+var SETTINGS_GLOBAL_NUDGESMALL = "nudgeDistanceSmall";
+var SETTINGS_GLOBAL_NUDGEBIG = "nudgeDistanceBig";
+var SETTINGS_PLUGIN_SHOVE = "shove";
+var URL_WEBSITE = "http://www.nudgepushshove.com/";
+var URL_USAGE = "http://www.nudgepushshove.com/#usage";
+var URL_CHANGELOG = "https://github.com/mfouquet/NudgePushShove/blob/master/CHANGELOG.md";
+
+
+/***/ }),
+
+/***/ "./src/sketch/utilities/utilities.js":
+/*!*******************************************!*\
+  !*** ./src/sketch/utilities/utilities.js ***!
+  \*******************************************/
+/*! exports provided: saveGlobalSetting, loadGlobalSetting, savePluginSetting, loadPluginSetting, openURL, showToast */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveGlobalSetting", function() { return saveGlobalSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadGlobalSetting", function() { return loadGlobalSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "savePluginSetting", function() { return savePluginSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadPluginSetting", function() { return loadPluginSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openURL", function() { return openURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showToast", function() { return showToast; });
+/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch/settings */ "sketch/settings");
+/* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch_settings__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sketch/ui */ "sketch/ui");
+/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sketch_ui__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* 
+Saves a global setting in Sketch to the provided key
+*/
+
+var saveGlobalSetting = function saveGlobalSetting(key, value) {
+  sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.setGlobalSettingForKey(key, value);
+};
+/* 
+Loads a global setting in Sketch to the provided key
+*/
+
+
+var loadGlobalSetting = function loadGlobalSetting(key) {
+  return sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.globalSettingForKey(key);
+};
+/* 
+Saves a plugin setting in Sketch to the provided key
+*/
+
+
+var savePluginSetting = function savePluginSetting(key, value) {
+  sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.setSettingForKey("com.mfouquet.sketch.nudgepushshove.".concat(key), value);
+};
+/* 
+Loads a plugin setting in Sketch with the provided key
+*/
+
+
+var loadPluginSetting = function loadPluginSetting(key) {
+  return sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.settingForKey("com.mfouquet.sketch.nudgepushshove.".concat(key));
+};
+/* 
+Opens a URL from Sketch
+*/
+
+
+var openURL = function openURL(url) {
+  var nsurl = NSURL.URLWithString(url);
+  NSWorkspace.sharedWorkspace().openURL(nsurl);
+};
+/*
+Shows a message at the bottom of the Sketch window
+*/
+
+
+var showToast = function showToast(message) {
+  sketch_ui__WEBPACK_IMPORTED_MODULE_1___default.a.message(message);
+};
+
+
 
 /***/ }),
 
@@ -3071,14 +3069,25 @@ module.exports = require("events");
 
 /***/ }),
 
-/***/ "sketch":
-/*!*************************!*\
-  !*** external "sketch" ***!
-  \*************************/
+/***/ "sketch/settings":
+/*!**********************************!*\
+  !*** external "sketch/settings" ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("sketch");
+module.exports = require("sketch/settings");
+
+/***/ }),
+
+/***/ "sketch/ui":
+/*!****************************!*\
+  !*** external "sketch/ui" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("sketch/ui");
 
 /***/ })
 

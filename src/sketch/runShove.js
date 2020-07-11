@@ -1,5 +1,5 @@
 import sketch from "sketch";
-import * as utils from "./utilities/utilities.js";
+import * as utils from "./utilities/utilities";
 import { SETTINGS_PLUGIN_SHOVE } from "./utilities/constants";
 
 const shoveUp = () => {

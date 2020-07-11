@@ -77,6 +77,10 @@ button:not(.button--save):hover {
   transform: scale(1.05);
 }
 
+.button--save:active {
+  transform: scale(0.99);
+}
+
 .separator {
   color: rgba(237, 242, 244, 0.75);
   margin-top: -4px;
@@ -117,6 +121,12 @@ input {
   padding: 0;
   text-align: center;
   width: 64px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .divider {

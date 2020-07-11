@@ -7,6 +7,11 @@ if (process.env.NODE_ENV === "production") {
   document.addEventListener("contextmenu", (e) => e.preventDefault());
 }
 
-window.prepareFirstLoad = function(uiType, uiObject, imageBuffer) {
-  ReactDOM.render(<Plugin />, document.getElementById("react-page"));
+window.prepareFirstLoad = (npsObject) => {
+  const jsonUiObject = JSON.parse(npsObject);
+
+  ReactDOM.render(
+    <Plugin pluginMessage={jsonUiObject} />,
+    document.getElementById("react-page")
+  );
 };

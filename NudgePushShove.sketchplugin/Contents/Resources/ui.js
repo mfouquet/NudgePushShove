@@ -86,16 +86,16 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/web/shared/dialog/style.css":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/web/shared/dialog/style.css ***!
-  \*******************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/web/ui.css":
+/*!**************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/web/ui.css ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "html,\nbody {\n  background-color: #1d2d44;\n  font-family: system-ui;\n  height: 100vh;\n  margin: 0;\n  overflow: hidden;\n  padding: 0;\n  width: 100vw;\n}\n\n.dialog {\n  padding: 24px;\n}\n\n.dismiss {\n  color: rgba(237, 242, 244, 0.75);\n  position: absolute;\n  top: 4px;\n  transition: color 0.15s ease-in-out;\n  right: 8px;\n}\n\n.dismiss:focus,\n.dismiss:hover {\n  color: rgba(237, 242, 244, 1);\n}\n\nheader {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  margin-top: 12px;\n  width: 100%;\n}\n\nbutton {\n  background-color: transparent;\n  border: 0;\n  border-radius: 4px;\n  box-shadow: none;\n  color: rgba(237, 242, 244, 0.75);\n  cursor: pointer;\n  font-size: 14px;\n  font-weight: 300;\n  line-height: 1;\n  margin: 0;\n  padding: 8px;\n  text-align: center;\n  text-decoration: none;\n  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;\n  vertical-align: middle;\n  -webkit-appearance: none;\n}\n\nbutton:not(.button--save):focus,\nbutton:not(.button--save):hover {\n  background-color: rgba(255, 255, 255, 0.05);\n  color: rgba(237, 242, 244, 1);\n}\n\n.button--save {\n  background-color: #8acd4f;\n  color: rgba(29, 45, 68, 1);\n  font-size: 24px;\n  font-weight: 900;\n  margin-bottom: 8px;\n  margin-top: 48px;\n  padding: 8px;\n  transition: transform 0.15s ease-in-out;\n  width: 168px;\n}\n\n.button--save:focus,\n.button--save:hover {\n  transform: scale(1.05);\n}\n\n.separator {\n  color: rgba(237, 242, 244, 0.75);\n  margin-top: -4px;\n  padding: 0 8px;\n}\n\nmain {\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  margin-top: 32px;\n}\n\n.row {\n  width: 216px;\n  padding-right: 28px;\n  display: flex;\n  justify-content: flex-end;\n  box-sizing: border-box;\n}\n\nlabel {\n  color: rgba(237, 242, 244, 1);\n  font-size: 24px;\n  font-weight: 900;\n  margin-right: 16px;\n}\n\ninput {\n  background-color: rgba(237, 242, 244, 1);\n  border: 0;\n  border-radius: 2px;\n  color: rgba(29, 45, 68, 1);\n  font-size: 24px;\n  font-weight: 700;\n  height: 30px;\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  width: 64px;\n}\n\n.divider {\n  background-color: rgba(237, 242, 244, 0.25);\n  height: 1px;\n  margin: 24px 0;\n  width: 216px;\n}\n", ""]);
+exports.push([module.i, "html,\nbody {\n  background-color: #1d2d44;\n  font-family: system-ui;\n  height: 100vh;\n  margin: 0;\n  overflow: hidden;\n  padding: 0;\n  width: 100vw;\n}\n\n.dialog {\n  padding: 24px;\n}\n\n.dismiss {\n  color: rgba(237, 242, 244, 0.75);\n  position: absolute;\n  top: 4px;\n  transition: color 0.15s ease-in-out;\n  right: 8px;\n}\n\n.dismiss:focus,\n.dismiss:hover {\n  color: rgba(237, 242, 244, 1);\n  cursor: pointer;\n}\n\nheader {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n  margin-top: 12px;\n  width: 100%;\n}\n\nbutton {\n  background-color: transparent;\n  border: 0;\n  border-radius: 4px;\n  box-shadow: none;\n  color: rgba(237, 242, 244, 0.75);\n  cursor: pointer;\n  font-size: 14px;\n  font-weight: 300;\n  line-height: 1;\n  margin: 0;\n  padding: 8px;\n  text-align: center;\n  text-decoration: none;\n  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;\n  vertical-align: middle;\n  -webkit-appearance: none;\n}\n\nbutton:not(.button--save):focus,\nbutton:not(.button--save):hover {\n  background-color: rgba(255, 255, 255, 0.05);\n  color: rgba(237, 242, 244, 1);\n}\n\n.button--save {\n  background-color: #8acd4f;\n  color: rgba(29, 45, 68, 1);\n  font-size: 24px;\n  font-weight: 900;\n  margin-bottom: 8px;\n  margin-top: 48px;\n  padding: 8px;\n  transition: transform 0.15s ease-in-out;\n  width: 168px;\n}\n\n.button--save:focus,\n.button--save:hover {\n  transform: scale(1.05);\n}\n\n.button--save:active {\n  transform: scale(0.99);\n}\n\n.separator {\n  color: rgba(237, 242, 244, 0.75);\n  margin-top: -4px;\n  padding: 0 8px;\n}\n\nmain {\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  margin-top: 32px;\n}\n\n.row {\n  width: 216px;\n  padding-right: 28px;\n  display: flex;\n  justify-content: flex-end;\n  box-sizing: border-box;\n}\n\nlabel {\n  color: rgba(237, 242, 244, 1);\n  font-size: 24px;\n  font-weight: 900;\n  margin-right: 16px;\n}\n\ninput {\n  background-color: rgba(237, 242, 244, 1);\n  border: 0;\n  border-radius: 2px;\n  color: rgba(29, 45, 68, 1);\n  font-size: 24px;\n  font-weight: 700;\n  height: 30px;\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  width: 64px;\n}\n\ninput::-webkit-outer-spin-button,\ninput::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.divider {\n  background-color: rgba(237, 242, 244, 0.25);\n  height: 1px;\n  margin: 24px 0;\n  width: 216px;\n}\n", ""]);
 
 
 
@@ -29907,84 +29907,15 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/web/shared/dialog/index.tsx":
-/*!*****************************************!*\
-  !*** ./src/web/shared/dialog/index.tsx ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-exports.__esModule = true;
-var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-__webpack_require__(/*! ./style.css */ "./src/web/shared/dialog/style.css");
-var Plugin = /** @class */ (function (_super) {
-    __extends(Plugin, _super);
-    function Plugin() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.handleZoomChange = function (value, colorblindType) {
-            console.log("nothing");
-        };
-        return _this;
-    }
-    Plugin.prototype.componentDidMount = function () { };
-    Plugin.prototype.render = function () {
-        return (React.createElement("div", { className: "dialog" },
-            React.createElement("div", { className: "dismiss" },
-                React.createElement("svg", { width: "10", height: "10", viewBox: "0 0 10 10", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-                    React.createElement("path", { d: "M9 1L1 9", stroke: "currentColor", strokeWidth: "1", strokeLinecap: "round", strokeLinejoin: "round" }),
-                    React.createElement("path", { d: "M1 1L9 9", stroke: "currentColor", strokeWidth: "1", strokeLinecap: "round", strokeLinejoin: "round" }))),
-            React.createElement("header", null,
-                React.createElement("button", null, "Website"),
-                React.createElement("span", { className: "separator" }, "\u00B7"),
-                React.createElement("button", null, "Help"),
-                React.createElement("span", { className: "separator" }, "\u00B7"),
-                React.createElement("button", null, "1.4.0")),
-            React.createElement("main", null,
-                React.createElement("div", { className: "row" },
-                    React.createElement("label", null, "Nudge"),
-                    React.createElement("input", { autoFocus: true })),
-                React.createElement("div", { className: "divider" }),
-                React.createElement("div", { className: "row" },
-                    React.createElement("label", null, "Push"),
-                    React.createElement("input", null)),
-                React.createElement("div", { className: "divider" }),
-                React.createElement("div", { className: "row" },
-                    React.createElement("label", null, "Shove"),
-                    React.createElement("input", null)),
-                React.createElement("button", { className: "button--save" }, "Save"),
-                React.createElement("button", null, "Reset"))));
-    };
-    return Plugin;
-}(React.Component));
-exports["default"] = Plugin;
-
-
-/***/ }),
-
-/***/ "./src/web/shared/dialog/style.css":
-/*!*****************************************!*\
-  !*** ./src/web/shared/dialog/style.css ***!
-  \*****************************************/
+/***/ "./src/web/ui.css":
+/*!************************!*\
+  !*** ./src/web/ui.css ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!./style.css */ "./node_modules/css-loader/dist/cjs.js!./src/web/shared/dialog/style.css");
+var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./ui.css */ "./node_modules/css-loader/dist/cjs.js!./src/web/ui.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -29998,7 +29929,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -30027,8 +29958,11 @@ __webpack_require__.r(__webpack_exports__);
 
 if (false) {}
 
-window.prepareFirstLoad = function (uiType, uiObject, imageBuffer) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ui_tsx__WEBPACK_IMPORTED_MODULE_2__["Plugin"], null), document.getElementById("react-page"));
+window.prepareFirstLoad = function (npsObject) {
+  var jsonUiObject = JSON.parse(npsObject);
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ui_tsx__WEBPACK_IMPORTED_MODULE_2__["Plugin"], {
+    pluginMessage: jsonUiObject
+  }), document.getElementById("react-page"));
 };
 
 /***/ }),
@@ -30058,15 +29992,89 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 exports.Plugin = void 0;
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var dialog_1 = __webpack_require__(/*! ./shared/dialog */ "./src/web/shared/dialog/index.tsx");
+__webpack_require__(/*! ./ui.css */ "./src/web/ui.css");
 var Plugin = /** @class */ (function (_super) {
     __extends(Plugin, _super);
-    function Plugin() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function Plugin(props) {
+        var _this = _super.call(this, props) || this;
+        _this.handleDismissClick = function () {
+            window.postMessage("dismissClicked", "");
+        };
+        _this.handleWebsiteClick = function () {
+            window.postMessage("websiteButtonClicked", "");
+        };
+        _this.handleHelpClick = function () {
+            window.postMessage("helpButtonClicked", "");
+        };
+        _this.handleVersionClick = function () {
+            window.postMessage("versionButtonClicked", "");
+        };
+        _this.handleSaveClick = function () {
+            window.postMessage("saveButtonClicked", JSON.stringify({
+                nudgeAmount: _this.state.nudge,
+                pushAmount: _this.state.push,
+                shoveAmount: _this.state.shove,
+            }));
+        };
+        _this.handleResetClick = function () {
+            _this.setState({
+                nudge: "1",
+                push: "10",
+                shove: "15",
+            });
+        };
+        _this.state = {
+            nudge: _this.props.pluginMessage.nudgeAmount,
+            push: _this.props.pluginMessage.pushAmount,
+            shove: _this.props.pluginMessage.shoveAmount,
+        };
+        _this.handleDismissClick = _this.handleDismissClick.bind(_this);
+        _this.handleWebsiteClick = _this.handleWebsiteClick.bind(_this);
+        _this.handleHelpClick = _this.handleHelpClick.bind(_this);
+        _this.handleVersionClick = _this.handleVersionClick.bind(_this);
+        _this.handleNudgeChange = _this.handleNudgeChange.bind(_this);
+        _this.handlePushChange = _this.handlePushChange.bind(_this);
+        _this.handleShoveChange = _this.handleShoveChange.bind(_this);
+        _this.handleSaveClick = _this.handleSaveClick.bind(_this);
+        _this.handleResetClick = _this.handleResetClick.bind(_this);
+        return _this;
     }
-    Plugin.prototype.componentDidMount = function () { };
+    Plugin.prototype.handleNudgeChange = function (e) {
+        this.setState({ nudge: e.target.value });
+    };
+    Plugin.prototype.handlePushChange = function (e) {
+        this.setState({ push: e.target.value });
+    };
+    Plugin.prototype.handleShoveChange = function (e) {
+        this.setState({ shove: e.target.value });
+    };
     Plugin.prototype.render = function () {
-        return React.createElement(dialog_1["default"], null);
+        var _a = this.state, nudge = _a.nudge, push = _a.push, shove = _a.shove;
+        return (React.createElement("div", { className: "dialog" },
+            React.createElement("div", { className: "dismiss", onClick: this.handleDismissClick },
+                React.createElement("svg", { width: "10", height: "10", viewBox: "0 0 10 10", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+                    React.createElement("path", { d: "M9 1L1 9", stroke: "currentColor", strokeWidth: "1", strokeLinecap: "round", strokeLinejoin: "round" }),
+                    React.createElement("path", { d: "M1 1L9 9", stroke: "currentColor", strokeWidth: "1", strokeLinecap: "round", strokeLinejoin: "round" }))),
+            React.createElement("header", null,
+                React.createElement("button", { onClick: this.handleWebsiteClick }, "Website"),
+                React.createElement("span", { className: "separator" }, "\u00B7"),
+                React.createElement("button", { onClick: this.handleHelpClick }, "Help"),
+                React.createElement("span", { className: "separator" }, "\u00B7"),
+                React.createElement("button", { onClick: this.handleVersionClick }, "1.4.0")),
+            React.createElement("main", null,
+                React.createElement("div", { className: "row" },
+                    React.createElement("label", null, "Nudge"),
+                    React.createElement("input", { autoFocus: true, type: "number", value: nudge, onChange: this.handleNudgeChange })),
+                React.createElement("div", { className: "divider" }),
+                React.createElement("div", { className: "row" },
+                    React.createElement("label", null, "Push"),
+                    React.createElement("input", { type: "number", value: push, onChange: this.handlePushChange })),
+                React.createElement("div", { className: "divider" }),
+                React.createElement("div", { className: "row" },
+                    React.createElement("label", null, "Shove"),
+                    React.createElement("input", { type: "number", value: shove, onChange: this.handleShoveChange })),
+                React.createElement("button", { className: "button--save", onClick: this.handleSaveClick }, "Save"),
+                React.createElement("button", { onClick: this.handleResetClick }, "Reset"))));
     };
     return Plugin;
 }(React.Component));

@@ -106,7 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "shoveLeft", function() { return shoveLeft; });
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch */ "sketch");
 /* harmony import */ var sketch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utilities_utilities_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities/utilities.js */ "./src/sketch/utilities/utilities.js");
+/* harmony import */ var _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utilities/utilities */ "./src/sketch/utilities/utilities.js");
 /* harmony import */ var _utilities_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utilities/constants */ "./src/sketch/utilities/constants.js");
 
 
@@ -129,7 +129,7 @@ var shoveLeft = function shoveLeft() {
 };
 
 var shoveObjects = function shoveObjects(direction) {
-  var shoveAmount = _utilities_utilities_js__WEBPACK_IMPORTED_MODULE_1__["loadPluginSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_PLUGIN_SHOVE"]) || 15;
+  var shoveAmount = _utilities_utilities__WEBPACK_IMPORTED_MODULE_1__["loadPluginSetting"](_utilities_constants__WEBPACK_IMPORTED_MODULE_2__["SETTINGS_PLUGIN_SHOVE"]) || 15;
   var doc = sketch__WEBPACK_IMPORTED_MODULE_0___default.a.getSelectedDocument();
   var selection = doc.selectedLayers;
   selection.forEach(function (layer) {
@@ -169,7 +169,7 @@ var shoveObjects = function shoveObjects(direction) {
 /*!*******************************************!*\
   !*** ./src/sketch/utilities/constants.js ***!
   \*******************************************/
-/*! exports provided: SETTINGS_GLOBAL_NUDGESMALL, SETTINGS_GLOBAL_NUDGEBIG, SETTINGS_PLUGIN_SHOVE */
+/*! exports provided: SETTINGS_GLOBAL_NUDGESMALL, SETTINGS_GLOBAL_NUDGEBIG, SETTINGS_PLUGIN_SHOVE, URL_WEBSITE, URL_USAGE, URL_CHANGELOG */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -177,16 +177,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_GLOBAL_NUDGESMALL", function() { return SETTINGS_GLOBAL_NUDGESMALL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_GLOBAL_NUDGEBIG", function() { return SETTINGS_GLOBAL_NUDGEBIG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SETTINGS_PLUGIN_SHOVE", function() { return SETTINGS_PLUGIN_SHOVE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL_WEBSITE", function() { return URL_WEBSITE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL_USAGE", function() { return URL_USAGE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL_CHANGELOG", function() { return URL_CHANGELOG; });
 var SETTINGS_GLOBAL_NUDGESMALL = "nudgeDistanceSmall";
 var SETTINGS_GLOBAL_NUDGEBIG = "nudgeDistanceBig";
-var SETTINGS_PLUGIN_SHOVE = "shove"; // const SETTINGS_STATUS = "subscription-status";
-// const SETTINGS_EMAIL = "email";
-// const SETTINGS_FREQUENCY = "frequency";
-// const SETTINGS_VERIFICATION = "verification";
-// const SETTINGS_MIXPANELID = "mixpanel-unique-id";
-// const URL_PRICING = "http://getstark.co/pricing";
-// const URL_SUPPORT = "http://support.getstark.co/";
-
+var SETTINGS_PLUGIN_SHOVE = "shove";
+var URL_WEBSITE = "http://www.nudgepushshove.com/";
+var URL_USAGE = "http://www.nudgepushshove.com/#usage";
+var URL_CHANGELOG = "https://github.com/mfouquet/NudgePushShove/blob/master/CHANGELOG.md";
 
 
 /***/ }),
@@ -195,16 +194,22 @@ var SETTINGS_PLUGIN_SHOVE = "shove"; // const SETTINGS_STATUS = "subscription-st
 /*!*******************************************!*\
   !*** ./src/sketch/utilities/utilities.js ***!
   \*******************************************/
-/*! exports provided: saveGlobalSetting, savePluginSetting, loadPluginSetting */
+/*! exports provided: saveGlobalSetting, loadGlobalSetting, savePluginSetting, loadPluginSetting, openURL, showToast */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveGlobalSetting", function() { return saveGlobalSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadGlobalSetting", function() { return loadGlobalSetting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "savePluginSetting", function() { return savePluginSetting; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadPluginSetting", function() { return loadPluginSetting; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openURL", function() { return openURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showToast", function() { return showToast; });
 /* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sketch/settings */ "sketch/settings");
 /* harmony import */ var sketch_settings__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sketch_settings__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sketch/ui */ "sketch/ui");
+/* harmony import */ var sketch_ui__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sketch_ui__WEBPACK_IMPORTED_MODULE_1__);
+
 
 /* 
 Saves a global setting in Sketch to the provided key
@@ -212,6 +217,14 @@ Saves a global setting in Sketch to the provided key
 
 var saveGlobalSetting = function saveGlobalSetting(key, value) {
   sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.setGlobalSettingForKey(key, value);
+};
+/* 
+Loads a global setting in Sketch to the provided key
+*/
+
+
+var loadGlobalSetting = function loadGlobalSetting(key) {
+  return sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.globalSettingForKey(key);
 };
 /* 
 Saves a plugin setting in Sketch to the provided key
@@ -222,12 +235,29 @@ var savePluginSetting = function savePluginSetting(key, value) {
   sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.setSettingForKey("com.mfouquet.sketch.nudgepushshove.".concat(key), value);
 };
 /* 
-Loads a setting in Sketch with the provided key
+Loads a plugin setting in Sketch with the provided key
 */
 
 
 var loadPluginSetting = function loadPluginSetting(key) {
   return sketch_settings__WEBPACK_IMPORTED_MODULE_0___default.a.settingForKey("com.mfouquet.sketch.nudgepushshove.".concat(key));
+};
+/* 
+Opens a URL from Sketch
+*/
+
+
+var openURL = function openURL(url) {
+  var nsurl = NSURL.URLWithString(url);
+  NSWorkspace.sharedWorkspace().openURL(nsurl);
+};
+/*
+Shows a message at the bottom of the Sketch window
+*/
+
+
+var showToast = function showToast(message) {
+  sketch_ui__WEBPACK_IMPORTED_MODULE_1___default.a.message(message);
 };
 
 
@@ -253,6 +283,17 @@ module.exports = require("sketch");
 /***/ (function(module, exports) {
 
 module.exports = require("sketch/settings");
+
+/***/ }),
+
+/***/ "sketch/ui":
+/*!****************************!*\
+  !*** external "sketch/ui" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("sketch/ui");
 
 /***/ })
 
