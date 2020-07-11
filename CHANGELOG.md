@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.4.1
+
+- Fix appcast.xml dates.
+
 ## 1.4.0
 
 - Rewrite plugin to work in latest versions of Sketch.
