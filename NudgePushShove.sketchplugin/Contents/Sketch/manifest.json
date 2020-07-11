@@ -6,7 +6,7 @@
   "author": "Michael Fouquet",
   "authorEmail": "michael.fouquet@me.com",
   "homepage": "http://www.nudgepushshove.com",
-  "appcast": "https://raw.githubusercontent.com/mfouquet/NudgePushShove/master/appcast.xml",
+  "appcast": "https://raw.githubusercontent.com/mfouquet/NudgePushShove/main/appcast.xml",
   "compatibleVersion": 4.1,
   "bundleVersion": 1,
   "icon": "images/Logo.png",
