@@ -1,4 +1,5 @@
 import * as React from "react";
+import Dialog from "./shared/dialog";
 
 interface IProps {
   eventType: string;
@@ -9,19 +10,9 @@ interface IState {
 }
 
 export class Plugin extends React.Component<IProps, IState> {
-  handleZoomChange = (value: string, colorblindType: string) => {
-    window.postMessage(
-      "zoomChanged",
-      JSON.stringify({
-        zoomValue: value,
-        colorblindType: colorblindType,
-      })
-    );
-  };
-
   componentDidMount() {}
 
   render() {
-    return <div>Placeholder</div>;
+    return <Dialog />;
   }
 }

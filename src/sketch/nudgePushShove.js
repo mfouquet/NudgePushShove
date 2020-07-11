@@ -132,3 +132,37 @@ var onRun = function(context) {
 //   app.setSettingForKey("nudgeDistanceSmall", settings.nudge)
 //   app.setSettingForKey("nudgeDistanceBig", settings.push)
 // }
+import sketch from "sketch";
+import BrowserWindow from "sketch-module-web-view";
+
+export default function() {
+  const options = {
+    identifier: "nudgepushshove",
+    frame: false,
+    height: 436,
+    width: 320,
+    resizable: false,
+    alwaysOnTop: true,
+    title: "nudgepushshove",
+    backgroundColor: "#1d2d44",
+  };
+
+  const browserWindow = new BrowserWindow(options);
+  const webContents = browserWindow.webContents;
+
+  webContents.on("did-finish-load", () => {
+    webContents
+      .executeJavaScript(
+        `prepareFirstLoad('Show Check Contrast', '${JSON.stringify("")}')`
+      )
+      .catch(console.error);
+    // utils.callMixpanelTrackEvent(
+    //   webContents,
+    //   "Opened Plugin",
+    //   "Check Contrast",
+    //   hasTextLayer ? "Text" : "Shape"
+    // );
+  });
+
+  browserWindow.loadURL(require("../web/ui.html"));
+}
